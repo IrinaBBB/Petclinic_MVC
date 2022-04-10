@@ -1,8 +1,5 @@
-﻿/*html {
-    scroll-behavior: smooth;
-}*/
-
-@import 'abstract/variables';
+﻿@import 'abstract/variables';
+@import 'abstract/base';
 @import 'abstract/typography';
 
 @import 'components/card';
@@ -10,98 +7,22 @@
 @import 'components/form';
 @import 'components/cta';
 @import 'components/link-list';
+@import 'components/nav';
 @import 'components/slider';
 @import 'components/social-services';
 
 @import 'sections/account';
 @import 'sections/footer';
+@import 'sections/location';
+@import 'sections/services';
 @import 'sections/team';
 
 
 
-.heading-main {
-    display: inline-block;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(to right bottom, $primary-light, $primary-dark);
-}
-
-.service-image {
-    display: block;
-    width: 75px;
-    margin: 0 auto;
-}
-
-.services-grid {
-    a {
-        text-decoration: none;
-    }
-}
-
-.heading-small {
-    font-size: 1.8rem;
-}
-
-.bg-dark {
-    background-image: linear-gradient(258.56deg, $primary-light 31.66%, $primary-dark 80.67%) !important;
-}
-
-.navbar-logo {
-    width: 2.5rem;
-}
-
-.btn-light {
-    background-image: linear-gradient(258.56deg, $primary-light 31.66%, $primary-dark 80.67%) !important;
-    border: 1px solid #fff;
-    color: #fff;
-
-    &:hover {
-        color: #fff;
-    }
-}
-
-.btn-light:not(:disabled):not(.disabled).active,
-.btn-light:not(:disabled):not(.disabled):active,
-.show>.btn-light.dropdown-toggle {
-    color: #fff;
-}
-
-.navbar {
-    z-index: 10;
-    .nav-link {
-        font-size: 16px;
-        text-transform: uppercase;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-
-    .nav-item {
-        &.active a {
-            border-bottom: 1px solid $color-white;
-            border-left: 1px solid $color-white;
-        }
-    }
-}
-
-.location {
-    background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.15), rgba($primary-light, 0.15));
-    background-position: center;
-    padding: 100px 0;
-
-    &-map.col-lg-6 {
-        padding: 0;
-    }
 
 
-    &-logo {
-        width: 50px;
-    }
 
-    &-contact {
-        background-color: white;
-        padding: 50px 60px;
-        height: 645px;
-    }
-}
+
+
+
+

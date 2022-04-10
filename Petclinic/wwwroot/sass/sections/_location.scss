@@ -1,0 +1,19 @@
+.location {
+    background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.15), rgba($primary-light, 0.15));
+    background-position: center;
+    padding: 100px 0;
+
+    &-map.col-lg-6 {
+        padding: 0;
+    }
+
+    &-logo {
+        width: 50px;
+    }
+
+    &-contact {
+        background-color: white;
+        padding: 50px 60px;
+        height: 645px;
+    }
+}

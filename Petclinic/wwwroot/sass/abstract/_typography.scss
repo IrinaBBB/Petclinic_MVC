@@ -1,4 +1,13 @@
-﻿.heading-image {
+﻿.heading-main {
+    display: inline-block;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right bottom, $primary-light, $primary-dark);
+}
+
+.heading-image {
     display: flex;
     align-items: center;
 
@@ -7,6 +16,11 @@
         margin-right: 10px;
     }
 }
+
+.heading-small {
+    font-size: 1.8rem;
+}
+
 
 .h {
     text-transform: uppercase;
