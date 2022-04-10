@@ -1,0 +1,13 @@
+﻿.swiper {
+    width: 80%;
+}
+
+.swiper-wrapper {
+    width: 50%;
+}
+
+@media screen and (max-width: 998px) {
+    .swiper-button-prev, .swiper-button-next {
+        display: none;
+    }
+}

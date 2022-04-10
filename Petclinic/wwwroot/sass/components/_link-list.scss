@@ -1,0 +1,28 @@
+.link-list {
+    list-style: none;
+    padding-left: 0;
+
+    a {
+        font-size: 17px;
+        letter-spacing: 1px;
+        font-weight: 300;
+        display: inline-block;
+        margin-bottom: 6px;   
+        border-bottom: 1px solid transparent;
+        transition: all .4s ease;
+        margin-left: 5px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &--light {
+        a {
+            color: $color-white;
+            &:hover {
+                border-bottom: 1px solid $color-white;
+            }
+        }
+    }
+}
+

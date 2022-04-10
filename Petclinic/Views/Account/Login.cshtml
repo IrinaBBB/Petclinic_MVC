@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="account__card">
+    <img class="footer__logo" src="~/img/vet.svg" alt="Vet logo"/>
+    <h3 class="heading-main heading-small">Login</h3>
+    <form class="form" autocomplete="off">
+        <div class="form__group">
+            <img class="form__icon" src="~/img/icons/at.svg" alt="user icon"/>
+            <input id="email" type="email" class="form__input" placeholder="Email" required/>
+            <label for="email" class=form__label>Email</label>
+        </div>
+        <div class="form__group">
+            <img class="form__icon" src="~/img/icons/padlock.svg" alt="user icon"/>
+            <input id="password" type="password" class="form__input" placeholder="Password" required/>
+            <label for="password" class=form__label>Password</label>
+        </div>
+        <button type="submit" class="btn btn-light btn-block text-uppercase">
+            Login
+        </button>
+    </form>
+    <div class="d-flex align-items-center">
+        <span>Don't yet have an account? Please</span>
+        <a class="btn btn-link px-1" asp-area="" asp-controller="Account" asp-action="Register">register</a>
+        <span>here</span>
+    </div>
+</div>

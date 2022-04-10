@@ -6,36 +6,26 @@ using Petclinic.Entities;
 
 namespace Petclinic.Controllers
 {
-    public class HomeController : Controller
+    public class AccountController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public AccountController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Login()
         {
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Index(AppointmentOrder model)
+        public IActionResult Register()
         {
 
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return Redirect(Url.Action("Index", "Home") + "#location");
-        }
-
-        public IActionResult Blog()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

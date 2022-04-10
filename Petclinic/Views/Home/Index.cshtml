@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<a href="#location" class="booking bg-success" data-toggle="tooltip" title="Book An Appointment">
+<a href="#booking" class="booking bg-success" data-toggle="tooltip" title="Book An Appointment">
     <img src="~/img/cta/schedule.svg" alt="Book an appointment"/>
 </a>
 @*<a href="#" class="up" data-toggle="tooltip" title="Back">
@@ -35,6 +35,33 @@
                         <h1 class="display-3">Dogs</h1>
                         <p class="lead">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                         <a href="#" class="btn btn-light btn-lg">Our Services For Dogs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item carousel-image carousel-image__3">
+                <div class="container">
+                    <div class="carousel-caption text-left d-none d-sm-block mb-5">
+                        <h1 class="display-3">Rodents</h1>
+                        <p class="lead">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <a href="#" class="btn btn-light btn-lg">Our Services For Rodents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item carousel-image carousel-image__4">
+                <div class="container">
+                    <div class="carousel-caption text-left d-none d-sm-block mb-5">
+                        <h1 class="display-3">Birds</h1>
+                        <p class="lead">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <a href="#" class="btn btn-light btn-lg">Our Services For Birds</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item carousel-image carousel-image__5">
+                <div class="container">
+                    <div class="carousel-caption text-right d-none d-sm-block mb-5">
+                        <h1 class="display-3">Exotic Animals</h1>
+                        <p class="lead">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <a href="#" class="btn btn-light btn-lg">Our Services For Exotic Animals</a>
                     </div>
                 </div>
             </div>
@@ -128,12 +155,77 @@
         </div>
     </div>
 </section>
+
 <section id="team" class="team">
-    <div class="col py-5">
+    <div class="team__header col py-5">
         <h2>Meet Our Team</h2>
     </div>
+    <div class="container team__container">
+        <!-- Swiper -->
+        <div class="swiper teamSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="~/img/team/team-1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">James Smith</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="~/img/team/team-5.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">James Smith</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="~/img/team/team-4.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">James Smith</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="~/img/team/team-6.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">James Smith</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="~/img/team/team-2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">James Smith</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="~/img/team/team-3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">James Smith</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 </section>
-<section style="height: 1000px;"></section>
+
 <section id="location" class="location">
     <div class="container">
         <div class="row">
@@ -142,7 +234,7 @@
                         src="https://maps.google.com/maps?q=Bod%C3%B8%20Storgata%206&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                 </iframe>
             </div>
-            <div class="col-lg-6 location-contact">
+            <div id="booking" class="col-lg-6 location-contact">
                 <div class="heading-image mb-3">
                     <img src="~/img/vet.svg" alt="Petclinic logo"/>
                     <h3 class="heading-main heading-small">Book an appointment</h3>
@@ -184,5 +276,37 @@
             interval: 4000,
             pause: 'hover'
         });
+
+        var swiper = new Swiper(".teamSwiper",
+            {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                slidesPerGroup: 1,
+                grabCursor: true,
+                breakpoints: {
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                        slidesPerGroup: 2
+                    },
+                    // when window width is >= 640px
+                    998: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                        slidesPerGroup: 3
+                    }
+                },
+                loop: true,
+                loopFillGroupWithBlank: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
     </script>
 }

@@ -1,0 +1,62 @@
+.carousel-item {
+    height: 38rem;
+}
+
+
+.carousel-image {
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+
+    &__1 {
+        background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.3), rgba($primary-light, 0.3)),
+        url('../img/carousel/carousel-1.jpg');
+    }
+
+    &__2 {
+        background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.3), rgba($primary-light, 0.3)),
+        url('../img/carousel/carousel-2.jpg');
+    }
+
+    &__3 {
+        background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.3), rgba($primary-light, 0.3)),
+        url('../img/carousel/carousel-3.jpg');
+        background-position: center;
+    }
+
+    &__4 {
+        background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.3), rgba($primary-light, 0.3)),
+            url('../img/carousel/carousel-4.jpg');
+        background-position: center;
+    }
+
+    &__5 {
+        background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.5), rgba($primary-light, 0.5)),
+            url('../img/carousel/carousel-5.jpg');
+        background-position: center;
+    }
+
+    &__6 {
+        background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.4), rgba($primary-light, 0.4)),
+            url('../img/carousel/carousel-6.jpg');
+        background-position: center;
+    }
+
+    &__7 {
+        background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.5), rgba($primary-light, 0.5)),
+            url('../img/carousel/carousel-7.jpg');
+        background-position: center;
+    }
+}
+
+.carousel-image-2 {
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+
+.carousel-image-3 {
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+}

@@ -1,0 +1,8 @@
+.footer {
+    background-image: linear-gradient(to right bottom, $primary-dark, $primary-light);   
+    padding: 100px 0 50px 0; 
+    &__logo {
+        width: 150px;
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="account__card account__card--register mt-5">
+    <div class="d-flex align-items-end mb-4">
+        <img style="width: 50px;" class="mr-2" src="~/img/vet.svg" alt="Vet logo"/>
+        <h3 class="heading-main heading-small">Register</h3>
+    </div>
+    <form class="form" autocomplete="off">
+        <div class="d-flex">
+            <div class="form__group mr-2">
+                <img class="form__icon" src="~/img/icons/user.svg" alt="user icon"/>
+                <input id="first-name" type="text" class="form__input" placeholder="First Name" required/>
+                <label for="email" class=form__label>First Name</label>
+            </div>
+            <div class="form__group">
+                <img class="form__icon" src="~/img/icons/user.svg" alt="user icon"/>
+                <input id="last-name" type="text" class="form__input" placeholder="Last Name" required/>
+                <label for="last-name" class=form__label>Last Name</label>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="form__group mr-2">
+                <img class="form__icon" src="~/img/icons/at.svg" alt="user icon"/>
+                <input id="email" type="email" class="form__input" placeholder="Email" required/>
+                <label for="email" class=form__label>Email</label>
+            </div>
+            <div class="form__group">
+                <img class="form__icon" src="~/img/icons/phone.svg" alt="phone icon"/>
+                <input id="phone" type="tel" class="form__input" placeholder="Phone number" required/>
+                <label for="phone" class=form__label>Phone Number</label>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="form__group mr-2">
+                <img class="form__icon" src="~/img/icons/padlock.svg" alt="user icon"/>
+                <input id="password" type="password" class="form__input" placeholder="Password" required/>
+                <label for="password" class=form__label>Password</label>
+            </div>
+            <div class="form__group">
+                <img class="form__icon" src="~/img/icons/padlock.svg" alt="user icon"/>
+                <input id="password-repeat" type="password" class="form__input" placeholder="repeat Password" required/>
+                <label for="password-repeat" class=form__label>Repeat Password</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-light btn-block text-uppercase">
+            Register
+        </button>
+    </form>
+    <div class="d-flex align-items-center">
+        <span>Already have an account? Please</span>
+        <a class="btn btn-link px-1" asp-area="" asp-controller="Account" asp-action="Login">login</a>
+        <span>here</span>
+    </div>
+</div>
