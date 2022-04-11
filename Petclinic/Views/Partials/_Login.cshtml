@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Petclinic.Entities
+
+@inject SignInManager<IdentityAppUser> _signInManager
+@inject UserManager<IdentityAppUser> _userManager
+
+@if (_signInManager.IsSignedIn(User))
+{
+    var userName = User.Claims.FirstOrDefault(claim => claim.Type == "firstName");
+
+    <li class="nav-item">
+        <a class="nav-link text-light" href="#">
+
+        </a>
+    </li>
+    <li class="nav-item">
+        <div class="dropdown">
+            <a class="nav-link text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                @*<span style="margin-right:2px;">Hello, @_userManager.GetUserName(User)!</span>*@
+                <span style="margin-right:2px;">Hello, 
+                @if (userName != null)
+                {
+                    @userName.Value
+                }
+                !</span>
+            </a>
+            <div class="dropdown-menu">
+                <form method="post" class="d-block text-dark py-1 ml-3" asp-area="" asp-controller="Account" asp-action="Logout">
+                    <button type="submit" class="btn btn-link">Log out</button>
+                </form>
+            </div>
+        </div>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+    </li>
+}

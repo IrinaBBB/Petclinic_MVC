@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Petclinic.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Petclinic.Entities;
 
 namespace Petclinic.Controllers
@@ -32,6 +33,8 @@ namespace Petclinic.Controllers
             return Redirect(Url.Action("Index", "Home") + "#location");
         }
 
+
+        [Authorize]
         public IActionResult Blog()
         {
             return View();
