@@ -192,6 +192,9 @@
     .link-list--light a:hover {
       border-bottom: 1px solid #fff; }
 
+.modal.fade.show {
+  background-image: linear-gradient(to right bottom, rgba(50, 93, 233, 0.3), rgba(84, 140, 246, 0.3)); }
+
 .navbar {
   z-index: 10; }
   .navbar .nav-link {

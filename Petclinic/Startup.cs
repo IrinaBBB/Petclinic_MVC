@@ -1,12 +1,15 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Petclinic.Data;
 using Petclinic.Entities;
+using Petclinic.Services;
 
 namespace Petclinic
 {
@@ -32,7 +35,18 @@ namespace Petclinic
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
             });
             services.AddIdentity<IdentityAppUser, IdentityRole>()
-                .AddEntityFrameworkStores<IdentityContext>();
+                .AddEntityFrameworkStores<IdentityContext>()
+                .AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireLowercase = true;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
+                options.Lockout.MaxFailedAccessAttempts = 2;
+
+            });
+            services.AddTransient<IEmailSender, MailJetEmailSender>();
+            services.AddTransient<ICustomEmailSender, SmtpEmailSender>();
+            services.Configure<SmtpOptions>(Configuration.GetSection("Smtp"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

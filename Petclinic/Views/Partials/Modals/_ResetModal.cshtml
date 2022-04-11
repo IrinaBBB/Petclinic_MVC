@@ -1,0 +1,36 @@
+﻿@model ResetPasswordViewModel
+
+<!-- Modal -->
+<div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex align-items-end mb-4">
+                    <img style="width: 50px;" class="mr-2" src="~/img/vet.svg" alt="Vet logo"/>
+                    <h3 class="heading-main heading-small">Reset Password</h3>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form asp-controller="Account" asp-action="ResetPassword" method="post" role="form">
+                <div class="modal-body">
+                    <div class="text-center mb-3" style="color: #777;">
+                        <span class="d-block">Please enter your email in order to reset you password.</span>
+                        <span class="d-block">If your email is in our database we will send you an email with further instructions.</span>
+                    </div>
+                    <div class="form__group mr-2">
+                        <img class="form__icon" src="~/img/icons/at.svg" alt="user icon"/>
+                        <input asp-for="Email" id="reset-email" type="email" class="form__input" placeholder="Email" required/>
+                        <label for="reset-email" class=form__label>Email</label>
+                    </div>
+               
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-light">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
