@@ -7,6 +7,11 @@
 @if (_signInManager.IsSignedIn(User))
 {
     var userName = User.Claims.FirstOrDefault(claim => claim.Type == "firstName");
+   @* var claims = User.Claims.ToList();
+    foreach (var claim in claims)
+    {
+        @claim
+    }*@
 
     <li class="nav-item">
         <a class="nav-link text-light" href="#">
@@ -25,6 +30,10 @@
                 !</span>
             </a>
             <div class="dropdown-menu">
+                <a class="d-block text-dark py-1 ml-3"
+                   asp-area="" asp-controller="Account" asp-action="EnableAuthenticator">
+                    Setup Two Factor Authentication
+                </a>
                 <form method="post" class="d-block text-dark py-1 ml-3" asp-area="" asp-controller="Account" asp-action="Logout">
                     <button type="submit" class="btn btn-link">Log out</button>
                 </form>

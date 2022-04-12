@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+@model TwoFactorAuthenticationViewModel  
+
+<div class="account__card text-center">
+    <img class="footer__logo" src="~/img/vet.svg" alt="Vet logo"/>
+    <h3 class="heading-main heading-small">Please enter the code below in your authenticator app</h3>
+    <p class="h5">@Model.Token</p>
+    <form method="post">
+        <input type="hidden" asp-for="Token"/>
+        <div class="form__group">
+            <img class="form__icon" src="~/img/icons/at.svg" alt="user icon"/>
+            <input asp-for="Code" id="code" type="text" class="form__input" placeholder="Enter your code" required/>
+            <label for="code" class=form__label>Enter your code</label>
+        </div>
+        <button type="submit" class="btn btn-light btn-block text-uppercase">
+            Submit
+        </button>
+    </form>
+</div>

@@ -1,7 +1,11 @@
 ﻿@{
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
+
 @model LoginViewModel
+@using Microsoft.AspNetCore.Identity
+@using Petclinic.Entities
+@inject SignInManager<IdentityAppUser> _signInManager
 
 @if(TempData["Message"] != null)
 {
@@ -13,7 +17,7 @@
     </div>
 }
 
-<div class="account__card">
+<div class="account__card pb-3">
     <img class="footer__logo" src="~/img/vet.svg" alt="Vet logo"/>
     <h3 class="heading-main heading-small">Login</h3>
     <form asp-action="Login" method="post"
@@ -51,6 +55,35 @@
             Reset your password.
         </button>
     </div>
+    @{
+        var scheme = await _signInManager.GetExternalAuthenticationSchemesAsync();
+        var loginProviders = scheme.ToList();
+    }
+    @if (loginProviders.Any())
+    {
+        <div class="d-flex align-items-center justify-content-center" style="color: #777; flex-direction: column">
+            <span>login with</span>
+            <form class="btn btn-link px-1"
+                  asp-route-returnUrl="@ViewData["ReturnUrl"]"
+                  asp-controller="Account" asp-action="ExternalLogin"
+                  method="post"
+                  role="form">
+                @foreach (var provider in loginProviders)
+               {    
+                   
+                   <button name="provider"
+                            value="@provider.Name" 
+                           type="submit" 
+                           class="btn btn-link" 
+                           style="margin-top: -7px; margin-left: -8px;"
+                           title="Log in using your @provider.Name account">
+                       <img style="width: 24px;" src="~/img/icons/@provider.Name-icon-circle-dark.svg" 
+                            alt="facebook login icon"/>
+                   </button>
+               }
+            </form>
+        </div>
+    }
 </div>
 
 <partial name="~/Views/Partials/Modals/_ResetModal.cshtml"/>

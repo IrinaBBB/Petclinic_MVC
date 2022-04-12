@@ -45,8 +45,20 @@ namespace Petclinic
 
             });
             services.AddTransient<IEmailSender, MailJetEmailSender>();
-            services.AddTransient<ICustomEmailSender, SmtpEmailSender>();
-            services.Configure<SmtpOptions>(Configuration.GetSection("Smtp"));
+            services.AddAuthentication()
+                .AddFacebook(options =>
+                {
+                    options.AppId = Configuration["FacebookLogin:AppId"];
+                    options.AppSecret = Configuration["FacebookLogin:AppSecret"];
+
+                })
+                .AddTwitter(options =>
+                {
+                    options.ConsumerKey = Configuration["TwitterLogin:ConsumerAPIKey"];
+                    options.ConsumerSecret = Configuration["TwitterLogin:ConsumerSecret"];
+                    options.RetrieveUserDetails = true;
+
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
