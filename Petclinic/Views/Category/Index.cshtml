@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Category> 
+
+
+<div class="container body">
+    <h1 class="heading-main">Categories</h1>
+        <div class="table">
+            <div class="table-row header green">
+                <div class="cell">
+                    Name
+                </div>
+                <div class="cell">
+                    Display Order
+                </div>
+            </div>
+    
+        @foreach (var item in Model)
+        {
+            <div class="table-row">
+                <div class="cell" data-title="Name">
+                    @item.Name
+                </div>
+                <div class="cell" data-title="Display Order">
+                    @item.DisplayOrder
+                </div>
+            </div>
+        }
+        </div>
+</div>
+

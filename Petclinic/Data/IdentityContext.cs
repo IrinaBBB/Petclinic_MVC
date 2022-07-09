@@ -5,7 +5,7 @@ using Petclinic.Entities;
 
 namespace Petclinic.Data
 {
-    public class IdentityContext : IdentityDbContext
+    public class IdentityContext : IdentityDbContext<IdentityAppUser>
     {
         public IdentityContext(DbContextOptions options) : base(options) { }
 

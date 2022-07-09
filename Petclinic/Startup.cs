@@ -26,9 +26,14 @@ namespace Petclinic
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
+            services.AddDbContext<ShopDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("OnlineShopDBConnection"));
             });
             services.AddDbContext<IdentityContext>(options =>
             {
@@ -87,6 +92,7 @@ namespace Petclinic
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages(); 
             });
         }
     }

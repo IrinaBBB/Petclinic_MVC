@@ -296,7 +296,7 @@ namespace Petclinic.Controllers
 
             var user = await _userManager.GetUserAsync(User);
             var succeeded = await _userManager
-                .VerifyTwoFactorTokenAsync(user, _userManager.Options.Tokens.ChangeEmailTokenProvider,
+                .VerifyTwoFactorTokenAsync(user, _userManager.Options.Tokens.AuthenticatorTokenProvider,
                     model.Code);
             if (succeeded)
             {
