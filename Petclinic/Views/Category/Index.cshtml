@@ -34,10 +34,14 @@
                     @item.DisplayOrder
                 </div>
                 <div class="cell" data-title="">
-                    <span class="rotating-btn edit"><a href="#"></a></span>
+                    <span class="rotating-btn edit">
+                        <a asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id"></a>
+                    </span>
                 </div>
                 <div class="cell" data-title="">
-                    <span class="rotating-btn delete"><a href="#"></a></span>
+                    <span class="rotating-btn delete">
+                        <a asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id"></a>
+                    </span>
                 </div>
             </div>
         }

@@ -55,6 +55,7 @@ namespace Petclinic.Controllers.Shop
             {
                 return NotFound();
             }
+
             return View(categoryFromDb);
         }
 
@@ -66,13 +67,41 @@ namespace Petclinic.Controllers.Shop
 
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(category);
+                _db.Categories.Update(category);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ReturnTempMessage("danger", "Something went wrong! We could not create new category :(");
             return View("Create");
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id is null or 0)
+            {
+                return NotFound();
+            }
+
+            var categoryFromDb = _db.Categories.Find(id);
+            if (categoryFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(categoryFromDb);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult DeletePost(int? id)
+        {
+            var obj = _db.Categories.Find(id);
+            if (obj is null) return NotFound();
+            _db.Categories.Remove(obj);
+            _db.SaveChanges();
+            ReturnTempMessage("warning", $"Category '{obj.Name}' is deleted.");
+            return RedirectToAction("Index");
         }
 
         private void ReturnTempMessage(string type, string message)
