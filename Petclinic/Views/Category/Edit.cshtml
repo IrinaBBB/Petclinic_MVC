@@ -1,0 +1,30 @@
+﻿@model Category 
+
+<div class="container body">
+    <div class="col-lg-6 location-contact">
+        <div class="heading-image mb-3">
+            <img src="~/img/vet.svg" alt="Petclinic logo"/>
+            <h3 class="heading-main heading-small">Edit Category</h3>
+        </div>
+        <form class="form" autocomplete="off" method="post">
+            <span class="text-danger d-block" asp-validation-for="Name"></span>
+            <div class="form__group">
+                <img class="form__icon" src="~/img/icons/apps.svg" alt="category icon"/>
+                <input asp-for="Name" type="text" class="form__input" placeholder="Category Name" required/>
+                <label asp-for="Name" for="name" class=form__label>Category Name</label>
+            </div>
+            <span class="text-danger d-block" asp-validation-for="DisplayOrder"></span>
+            <div class="form__group">
+                <img class="form__icon" src="~/img/icons/list.svg" alt="user icon"/>
+                <input asp-for="DisplayOrder" type="number" class="form__input" placeholder="Display Order" />
+                <label asp-for="DisplayOrder" class=form__label>Display Order</label>
+            </div>
+            <button type="submit" class="btn btn-light btn-block text-uppercase">
+                Save
+            </button>
+            <a type="button" asp-controller="Category" asp-action="Edit" class="btn bg-warning btn-block text-uppercase mt-4">
+                Back To List
+            </a>
+        </form>
+    </div>
+</div>

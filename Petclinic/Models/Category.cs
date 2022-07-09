@@ -11,7 +11,8 @@ namespace Petclinic.Models
         [Required]
         public string Name { get; set; }
 
-        public int DisplayOrder { get; set; }
+        [Range(1, 200)]
+        public int? DisplayOrder { get; set; }
         public DateTime CreatedDateTime { get; set; } = DateTime.Now;
     }
 }

@@ -1,18 +1,29 @@
 ﻿@model IEnumerable<Category> 
 
-
+<a asp-controller="Category" asp-action="Create" class="cta-round right-top small bg-warning" data-toggle="tooltip" title="Book An Appointment">
+    <img src="~/img/cta/plus.svg" alt="Add a new category"/>
+</a>
 <div class="container body">
-    <h1 class="heading-main">Categories</h1>
-        <div class="table">
-            <div class="table-row header green">
-                <div class="cell">
-                    Name
-                </div>
-                <div class="cell">
-                    Display Order
-                </div>
+    <div class="heading-image mb-3 mt-4">
+        <img src="~/img/vet.svg" alt="Petclinic logo"/>
+        <h3 class="heading-main heading-small">Categories</h3>
+    </div>
+    <div class="table">
+        <div class="table-row header blue">
+            <div class="cell">
+                Name
             </div>
-    
+            <div class="cell">
+                Display Order
+            </div>
+            <div class="cell">
+                &nbsp;
+            </div>
+            <div class="cell">
+                &nbsp;
+            </div>
+        </div>
+
         @foreach (var item in Model)
         {
             <div class="table-row">
@@ -22,8 +33,13 @@
                 <div class="cell" data-title="Display Order">
                     @item.DisplayOrder
                 </div>
+                <div class="cell" data-title="">
+                    <span class="rotating-btn edit"><a href="#"></a></span>
+                </div>
+                <div class="cell" data-title="">
+                    <span class="rotating-btn delete"><a href="#"></a></span>
+                </div>
             </div>
         }
-        </div>
+    </div>
 </div>
-

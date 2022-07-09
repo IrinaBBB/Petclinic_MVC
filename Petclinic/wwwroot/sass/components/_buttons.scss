@@ -1,0 +1,82 @@
+﻿span.rotating-btn {
+    position: relative;
+    display: inline-flex;
+    width: 70px;
+    height: 30px;
+    margin: 0 15px;
+    perspective: 1000px;
+}
+
+span.rotating-btn a {
+    font-size: 12px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+span.rotating-btn a:before,
+span.rotating-btn a:after {
+    position: absolute;
+    height: 30px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+span.rotating-btn a:before {
+    color: #fff;
+    transform: rotateY(0deg) translateZ(12px);
+}
+
+span.rotating-btn a:after {
+    transform: rotateX(90deg) translateZ(12px);
+}
+
+span.rotating-btn a:hover {
+    transform: translateZ(-12px) rotateX(-90deg);
+}
+
+// EDIT
+span.rotating-btn.edit a:before {
+    border: 2px solid green;
+    content: "EDIT";
+}
+
+span.rotating-btn.edit a:after {
+    border: 2px solid green;
+    content: "\F4C7";
+    font-family: "bootstrap-icons";
+}
+
+span.rotating-btn.edit a:before {
+    background: green;
+}
+
+span.rotating-btn.edit a:after {
+    color: green;
+}
+
+// DELETE
+span.rotating-btn.delete a:before {
+    border: 2px solid red;
+    content: "DELETE";
+}
+
+span.rotating-btn.delete a:after {
+    border: 2px solid red;
+    content: "\F78A";
+    font-family: "bootstrap-icons";
+}
+
+span.rotating-btn.delete a:before {
+    background: red;
+}
+
+span.rotating-btn.delete a:after {
+    color: red;
+}
