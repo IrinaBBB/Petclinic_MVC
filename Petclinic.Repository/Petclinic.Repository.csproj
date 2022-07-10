@@ -9,4 +9,8 @@
     <Folder Include="Repository\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PetClinic.DataAccess\PetClinic.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>
