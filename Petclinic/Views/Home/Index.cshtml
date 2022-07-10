@@ -2,9 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 
-<a href="#booking" class="cta-round right-bottom bg-success" data-toggle="tooltip" title="Book An Appointment">
+@*<a href="#booking" class="cta-round right-bottom bg-success" data-toggle="tooltip" title="Book An Appointment">
     <img src="~/img/cta/schedule.svg" alt="Book an appointment"/>
-</a>
+</a>*@
+<partial name="~/Views/Partials/_MenuFAB.cshtml"/>
 <section id="showcase">
     <partial name="~/Views/Partials/_Carousel.cshtml"/>
 </section>
@@ -186,11 +187,11 @@
                 loopFillGroupWithBlank: true,
                 pagination: {
                     el: ".swiper-pagination",
-                    clickable: true,
+                    clickable: true
                 },
                 navigation: {
                     nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
+                    prevEl: ".swiper-button-prev"
                 },
             });
     </script>

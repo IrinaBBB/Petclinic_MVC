@@ -26,3 +26,12 @@
     }
 }
 
+nav .container .collapse .link-list--light:hover,
+nav .container .collapse .link-list--light:active {
+    a {
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+    }
+}
+
