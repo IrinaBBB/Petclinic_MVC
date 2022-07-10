@@ -376,7 +376,8 @@ span.rotating-btn.delete a:after {
   padding: 6px 12px;
   display: table-cell;
   text-align: center;
-  font-size: 18px; }
+  font-size: 16px;
+  text-transform: uppercase; }
 
 @media screen and (max-width: 580px) {
   .cell {

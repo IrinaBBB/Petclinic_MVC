@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petclinic", "Petclinic\Petclinic.csproj", "{AEF75A60-AD68-4603-A491-6F07953D5FB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petclinic", "Petclinic\Petclinic.csproj", "{AEF75A60-AD68-4603-A491-6F07953D5FB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetClinic.DataAccess", "PetClinic.DataAccess\PetClinic.DataAccess.csproj", "{29F7D5AC-25D1-4730-BCD6-E125306F3793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetClinic.Models", "PetClinic.Models\PetClinic.Models.csproj", "{A01DCDE1-DECC-41D3-BA18-01F4EDD9E702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetClinic.Utility", "PetClinic.Utility\PetClinic.Utility.csproj", "{8AE8E855-995E-46B4-B988-30D3193A2AED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{AEF75A60-AD68-4603-A491-6F07953D5FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEF75A60-AD68-4603-A491-6F07953D5FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEF75A60-AD68-4603-A491-6F07953D5FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F7D5AC-25D1-4730-BCD6-E125306F3793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F7D5AC-25D1-4730-BCD6-E125306F3793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F7D5AC-25D1-4730-BCD6-E125306F3793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F7D5AC-25D1-4730-BCD6-E125306F3793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01DCDE1-DECC-41D3-BA18-01F4EDD9E702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01DCDE1-DECC-41D3-BA18-01F4EDD9E702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01DCDE1-DECC-41D3-BA18-01F4EDD9E702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01DCDE1-DECC-41D3-BA18-01F4EDD9E702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE8E855-995E-46B4-B988-30D3193A2AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE8E855-995E-46B4-B988-30D3193A2AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE8E855-995E-46B4-B988-30D3193A2AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE8E855-995E-46B4-B988-30D3193A2AED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

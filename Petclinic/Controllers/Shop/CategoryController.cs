@@ -36,6 +36,7 @@ namespace Petclinic.Controllers.Shop
             {
                 _db.Categories.Add(category);
                 _db.SaveChanges();
+                ReturnTempMessage("success", $"Category '{category.Name}' has been created.");
                 return RedirectToAction("Index");
             }
 
@@ -92,7 +93,7 @@ namespace Petclinic.Controllers.Shop
             return View(categoryFromDb);
         }
 
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [AutoValidateAntiforgeryToken]
         public IActionResult DeletePost(int? id)
         {
@@ -100,7 +101,7 @@ namespace Petclinic.Controllers.Shop
             if (obj is null) return NotFound();
             _db.Categories.Remove(obj);
             _db.SaveChanges();
-            ReturnTempMessage("warning", $"Category '{obj.Name}' is deleted.");
+            ReturnTempMessage("danger", $"Category '{obj.Name}' is deleted.");
             return RedirectToAction("Index");
         }
 
