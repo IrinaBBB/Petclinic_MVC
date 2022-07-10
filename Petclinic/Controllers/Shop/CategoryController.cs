@@ -1,22 +1,22 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using PetClinic.DataAccess;
 using PetClinic.Models.Shop;
+using Petclinic.Repository.IRepository;
 
 namespace Petclinic.Controllers.Shop
 {
     public class CategoryController : Controller
     {
-        private readonly ShopDbContext _db;
+        private readonly IUnitOfWork _db;
 
-        public CategoryController(ShopDbContext db)
+        public CategoryController(IUnitOfWork db)
         {
             _db = db;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<Category> objCategoryList = _db.Categories;
+            IEnumerable<Category> objCategoryList = _db.Category.GetAll();
             return View(objCategoryList);
         }
 
@@ -33,8 +33,8 @@ namespace Petclinic.Controllers.Shop
 
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(category);
-                _db.SaveChanges();
+                _db.Category.Add(category);
+                _db.Save();
                 ReturnTempMessage("success", $"Category '{category.Name}' has been created.");
                 return RedirectToAction("Index");
             }
@@ -50,7 +50,7 @@ namespace Petclinic.Controllers.Shop
                 return NotFound();
             }
 
-            var categoryFromDb = _db.Categories.Find(id);
+            var categoryFromDb = _db.Category.GetFirstOrDefault(u => u.Id == id);
             if (categoryFromDb == null)
             {
                 return NotFound();
@@ -67,8 +67,8 @@ namespace Petclinic.Controllers.Shop
 
             if (ModelState.IsValid)
             {
-                _db.Categories.Update(category);
-                _db.SaveChanges();
+                _db.Category.Update(category);
+                _db.Save();
                 return RedirectToAction("Index");
             }
 
@@ -83,7 +83,7 @@ namespace Petclinic.Controllers.Shop
                 return NotFound();
             }
 
-            var categoryFromDb = _db.Categories.Find(id);
+            var categoryFromDb = _db.Category.GetFirstOrDefault(u => u.Id == id);
             if (categoryFromDb == null)
             {
                 return NotFound();
@@ -96,10 +96,10 @@ namespace Petclinic.Controllers.Shop
         [AutoValidateAntiforgeryToken]
         public IActionResult DeletePost(int? id)
         {
-            var obj = _db.Categories.Find(id);
+            var obj = _db.Category.GetFirstOrDefault(u => u.Id == id);
             if (obj is null) return NotFound();
-            _db.Categories.Remove(obj);
-            _db.SaveChanges();
+            _db.Category.Remove(obj);
+            _db.Save();
             ReturnTempMessage("danger", $"Category '{obj.Name}' is deleted.");
             return RedirectToAction("Index");
         }

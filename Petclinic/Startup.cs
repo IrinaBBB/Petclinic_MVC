@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PetClinic.DataAccess;
 using PetClinic.Models.Clinic;
+using Petclinic.Repository.IRepository;
+using Petclinic.Repository.Repository;
 using Petclinic.Services;
 
 namespace Petclinic
@@ -25,6 +27,8 @@ namespace Petclinic
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDbContext<DataContext>(options =>
@@ -49,7 +53,7 @@ namespace Petclinic
                 options.Lockout.MaxFailedAccessAttempts = 2;
 
             });
-            services.AddTransient<IEmailSender, MailJetEmailSender>();
+                services.AddTransient<IEmailSender, MailJetEmailSender>();
             services.AddAuthentication()
                 .AddFacebook(options =>
                 {
@@ -64,6 +68,7 @@ namespace Petclinic
                     options.RetrieveUserDetails = true;
 
                 });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
