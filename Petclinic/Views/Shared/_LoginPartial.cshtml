@@ -1,14 +1,14 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using Petclinic.Entities
+@using PetClinic.Models.Clinic
 
-@inject SignInManager<IdentityAppUser> SignInManager
-@inject UserManager<IdentityAppUser> UserManager
+@inject SignInManager<IdentityAppUser> _signInManager
+@inject UserManager<IdentityAppUser> _userManager
 
 <ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
+@if (_signInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @_userManager.GetUserName(User)!</a>
     </li>
     <li class="nav-item">
         <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

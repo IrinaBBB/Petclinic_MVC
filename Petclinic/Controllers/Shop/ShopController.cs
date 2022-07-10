@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Petclinic.Data;
+using PetClinic.DataAccess;
 
 namespace Petclinic.Controllers.Shop
 {

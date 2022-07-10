@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Petclinic.Models;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
-using Petclinic.Entities;
+using PetClinic.Models.Clinic;
+using PetClinic.Models.Shop;
 
 namespace Petclinic.Controllers
 {

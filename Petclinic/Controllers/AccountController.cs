@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Petclinic.Models;
 using System.Diagnostics;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Options;
-using Petclinic.Entities;
+using PetClinic.Models.Clinic;
+using PetClinic.Models.Shop;
 
 namespace Petclinic.Controllers
 {

@@ -2,9 +2,9 @@
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
 
-@model LoginViewModel
+@model PetClinic.Models.Shop.LoginViewModel
 @using Microsoft.AspNetCore.Identity
-@using Petclinic.Entities
+@using PetClinic.Models.Clinic
 @inject SignInManager<IdentityAppUser> _signInManager
 
 @if(TempData["Message"] != null)

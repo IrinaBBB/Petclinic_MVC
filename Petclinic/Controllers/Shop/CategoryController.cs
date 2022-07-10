@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Petclinic.Data;
-using Petclinic.Models;
+using PetClinic.DataAccess;
+using PetClinic.Models.Shop;
 
 namespace Petclinic.Controllers.Shop
 {
