@@ -310,7 +310,7 @@ span.rotating-btn.delete a:after {
     width: 28px;
     height: 6px;
     border-radius: 3px;
-    background: #fff;
+    background: pink;
     position: absolute;
     left: 50%;
     top: 50%;
