@@ -1,19 +1,20 @@
-﻿@model IEnumerable<PetClinic.Models.Shop.Category> 
+﻿@model IEnumerable<PetClinic.Models.Shop.Product> 
 
-<a asp-controller="Category" asp-action="Create" class="cta-round right-top small bg-warning" data-toggle="tooltip" title="Book An Appointment">
-    <img src="~/img/cta/plus.svg" alt="Add a new category"/>
+<a asp-controller="Product" asp-action="Create" class="cta-round right-top small bg-warning" data-toggle="tooltip" title="Book An Appointment">
+    <img src="~/img/cta/plus.svg" alt="Add a new product"/>
 </a>
 <div class="container body pb-5">
     <div class="heading-image mb-3 mt-4">
-        <img src="~/img/vet.svg" alt="Petclinic logo"/>
-        <h3 class="heading-main heading-small">Categories</h3>
+        <h3 class="heading-main heading-small">Products</h3>
     </div>
     <partial name="~/Views/Partials/_TempData.cshtml"/>
-    <table id="categories_table" class="table">
+    <table id="products_table" class="table">
         <thead>
         <tr class="table-row header blue">
-            <th class="cell">Name</th>
-            <th class="cell">Display Order</th>
+            <th class="cell">Title</th>
+            <th class="cell">Price</th>
+            <th class="cell">Producer</th>
+            <th class="cell">Category</th>
             <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
             <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
         </tr>
@@ -25,17 +26,23 @@
                 <td class="cell left" data-title="Name">
                     @item.Name
                 </td>
-                <td class="cell left" data-title="Display Order">
-                    @item.DisplayOrder
+                <td class="cell left" data-title="Name">
+                    @item.Price
+                </td>
+                <td class="cell left" data-title="Name">
+                    @item.Producer
+                </td>
+                <td class="cell left" data-title="Name">
+                    @item.Category
                 </td>
                 <td class="cell" data-title="">
                     <span class="rotating-btn edit">
-                        <a asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id"></a>
+                        <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id"></a>
                     </span>
                 </td>
                 <td class="cell" data-title="">
                     <span class="rotating-btn delete">
-                        <a asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id"></a>
+                        <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"></a>
                     </span>
                 </td>
             </tr>
@@ -47,7 +54,7 @@
 @section Scripts {
     <script>
         $(document).ready(function() {
-            $('#categories_table').DataTable();
+            $('#products_table').DataTable();
         });
     </script>
 }

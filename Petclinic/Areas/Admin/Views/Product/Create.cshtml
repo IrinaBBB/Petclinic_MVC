@@ -1,0 +1,76 @@
+﻿@model Petclinic.Areas.Admin.ViewModels.CreateProductViewModel
+
+<div class="container body py-5">
+    <div class="heading-image mb-3">
+        <img src="~/img/vet.svg" alt="Petclinic logo"/>
+        <h3 class="heading-main heading-small">Create New Product</h3>
+    </div>
+    <form class="form" autocomplete="off" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-6">
+                <span class="text-danger d-block" asp-validation-for="Product.Name"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/package.svg" alt="Product icon"/>
+                    <input asp-for="Product.Name" type="text" class="form__input" placeholder="Product Name" required/>
+                    <label asp-for="Product.Name" class=form__label>Product Name</label>
+                </div>
+                <span class="text-danger d-block" asp-validation-for="Product.ListPrice"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/price-tag.svg" alt="price icon"/>
+                    <input asp-for="Product.ListPrice" type="number" class="form__input" placeholder="List Price"/>
+                    <label asp-for="Product.ListPrice" class=form__label>List Price</label>
+                </div>
+                <span class="text-danger d-block" asp-validation-for="Product.Price"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/price-tag.svg" alt="price icon"/>
+                    <input asp-for="Product.Price" type="number" class="form__input" placeholder="Price"/>
+                    <label asp-for="Product.Price" class=form__label>Price</label>
+                </div>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/price-tag.svg" alt="price icon"/>
+                    <input asp-for="Product.Price50" type="number" class="form__input" placeholder="Price 50"/>
+                    <label asp-for="Product.Price50" class=form__label>Price 50</label>
+                </div>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/price-tag.svg" alt="price icon"/>
+                    <input asp-for="Product.Price100" type="number" class="form__input" placeholder="Price 100"/>
+                    <label asp-for="Product.Price100" class=form__label>Price 100</label>
+                </div>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/information.svg" alt="description icon"/>
+                    <textarea id="problem" rows=10 type="text" class="form__input" placeholder="Description" required></textarea>
+                    <label for="problem" class=form__label>Description</label>
+                </div>
+                <button type="submit" class="btn btn-light btn-block text-uppercase">
+                    <i class="bi bi-file-plus mr-2"></i>Create
+                </button>
+                <a type="button" asp-controller="Product" asp-action="Index" class="btn bg-warning btn-block text-uppercase mt-4">
+                    <i class="bi bi-arrow-left mr-2"></i>Back To List
+                </a>
+            </div>
+            <div class="col-md-6">
+                <span class="text-danger d-block" asp-validation-for="Product.CategoryId"></span>
+                <select asp-for="Product.CategoryId" class="select mb-3" asp-items="@Model.Categories">
+                    <option disabled selected>-- Select Category --</option>
+                </select>
+                <span class="text-danger d-block" asp-validation-for="Product.Producer"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/engineering.svg" alt="Product icon"/>
+                    <input asp-for="Product.Producer" type="text" class="form__input" placeholder="Producer" required/>
+                    <label asp-for="Product.Producer" class=form__label>Producer</label>
+                </div>
+                <div class="upload">
+                    <input class="upload__input" type="file" id="upload-button" accept="image/*"/>
+                    <label class="upload__label" for="upload-button">
+                        <img class="upload__icon" src="~/img/icons/insert-picture-icon.svg" alt="image icon"/>
+                        <span>Choose an Image</span>
+                    </label>
+                    <figure class=upload__image-container>
+                        <figcaption id="file-name"></figcaption>
+                        <img class="upload__image" id="chosen-image" src="~/img/no-images.svg"/>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

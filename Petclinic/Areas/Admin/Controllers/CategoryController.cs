@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PetClinic.Models.Shop;
 using Petclinic.Repository.IRepository;
 
-namespace Petclinic.Controllers.Shop
+namespace Petclinic.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {

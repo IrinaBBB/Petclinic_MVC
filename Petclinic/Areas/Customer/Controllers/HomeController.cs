@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using Microsoft.AspNetCore.Authorization;
 using PetClinic.Models.Clinic;
 using PetClinic.Models.Shop;
 
@@ -34,7 +33,6 @@ namespace Petclinic.Controllers
         }
 
 
-        [Authorize]
         public IActionResult Blog()
         {
             return View();

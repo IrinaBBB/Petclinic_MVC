@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using PetClinic.Models.Clinic;
 using PetClinic.Models.Shop;
 
-namespace Petclinic.Controllers
+namespace Petclinic.Areas.Customer.Controllers
 {
     public class AccountController : Controller
     {

@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\ViewModels\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

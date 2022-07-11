@@ -406,6 +406,22 @@ nav .container .collapse .link-list--light:active a:hover {
 .navbar-logo {
   width: 2.5rem; }
 
+.select {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  background-color: rgba(50, 93, 233, 0.08);
+  outline: none;
+  font-family: inherit;
+  color: #999;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent; }
+  .select:focus {
+    outline: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #325DE9; }
+
 .swiper {
   width: 80%; }
 
@@ -512,6 +528,32 @@ table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, 
   .cell {
     padding: 2px 16px;
     display: block; } }
+input[type="file"] {
+  display: none; }
+
+.upload__label {
+  color: #fff;
+  padding: 14px;
+  width: 100%;
+  background-color: rgba(50, 93, 233, 0.08);
+  font-family: inherit;
+  color: #999;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid transparent; }
+  .upload__label:hover {
+    outline: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #325DE9; }
+.upload__icon {
+  width: 25px;
+  margin-right: 10px; }
+.upload__image {
+  width: 100%; }
+
 .account {
   display: flex;
   justify-content: center;

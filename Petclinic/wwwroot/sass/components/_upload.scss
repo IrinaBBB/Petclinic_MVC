@@ -1,0 +1,35 @@
+input[type="file"] {
+    display: none;
+}
+
+.upload {
+    &__label {
+        color: #fff;
+        padding: 14px;
+        width: 100%;
+        background-color:  rgba(50, 93, 233, 0.08);
+        font-family: inherit;
+        color: #999;
+        font-size: 14px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 3px solid transparent;
+        
+        &:hover {
+            outline: none;
+            box-shadow: 0 10px 20px rgba(#000, .1);
+            border-bottom: 3px solid $primary-dark;
+        }
+    }
+
+    &__icon {
+        width: 25px;
+        margin-right: 10px;
+    }
+
+    &__image {
+        width: 100%;
+    }
+}
