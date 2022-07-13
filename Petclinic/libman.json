@@ -21,6 +21,10 @@
     {
       "library": "datatables.net@2.1.1",
       "destination": "wwwroot/lib/datatables.net"
+    },
+    {
+      "library": "limonte-sweetalert2@11.4.20",
+      "destination": "wwwroot/lib/limonte-sweetalert2/"
     }
   ]
 }

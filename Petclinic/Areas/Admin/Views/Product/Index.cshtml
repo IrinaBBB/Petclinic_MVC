@@ -3,7 +3,7 @@
 <a asp-controller="Product" asp-action="Create" class="cta-round right-top small bg-warning" data-toggle="tooltip" title="Book An Appointment">
     <img src="~/img/cta/plus.svg" alt="Add a new product"/>
 </a>
-<div class="container body pb-5">
+<div class="container-fluid body pb-5">
     <div class="heading-image mb-3 mt-4">
         <h3 class="heading-main heading-small">Products</h3>
     </div>
@@ -11,6 +11,7 @@
     <table id="products_table" class="table">
         <thead>
         <tr class="table-row header blue">
+            <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
             <th class="cell">Title</th>
             <th class="cell">Price</th>
             <th class="cell">Producer</th>
@@ -23,18 +24,30 @@
         @foreach (var item in Model)
         {
             <tr class="table-row">
+                    <td class="cell left">
+                        @if (item.ImageUrl != null)
+                        {
+                            <img id="chosen-image" src="/@item.ImageUrl" alt="@item.Name"/>
+                        }
+                        else
+                        {
+                            <img id="chosen-image" src="~/img/no-images.svg" alt="No Image"/>
+                        }
+                    </td>
                 <td class="cell left" data-title="Name">
-                    @item.Name
+                    <a href="#">
+                        @item.Name
+                    </a>
                 </td>
-                <td class="cell left" data-title="Name">
-                    @item.Price
-                </td>
-                <td class="cell left" data-title="Name">
-                    @item.Producer
-                </td>
-                <td class="cell left" data-title="Name">
-                    @item.Category
-                </td>
+                    <td class="cell left" data-title="Price">
+                        @item.Price
+                    </td>
+                    <td class="cell left" data-title="Producer">
+                        @item.Producer
+                    </td>
+                    <td class="cell left" data-title="Category">
+                        @item.Category.Name
+                    </td>
                 <td class="cell" data-title="">
                     <span class="rotating-btn edit">
                         <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id"></a>

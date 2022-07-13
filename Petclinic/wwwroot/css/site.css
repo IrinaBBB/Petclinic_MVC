@@ -20,6 +20,9 @@
 .container.body {
   min-height: 60vh; }
 
+.container-fluid.body {
+  min-height: 60vh; }
+
 .heading-main {
   display: inline-block;
   font-size: 2.5rem;
@@ -456,6 +459,8 @@ nav .container .collapse .link-list--light:active a:hover {
 .table-row {
   display: table-row;
   background: #f6f6f6; }
+  .table-row img {
+    width: 100px; }
 
 .table-row:nth-of-type(odd) {
   background: #e9e9e9; }

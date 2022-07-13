@@ -20,6 +20,10 @@
 .table-row {
     display: table-row;
     background: #f6f6f6;
+
+    img {
+        width: 100px;
+    }
 }
 
 .table-row:nth-of-type(odd) {

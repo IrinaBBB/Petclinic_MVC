@@ -1,30 +1,78 @@
-﻿@model PetClinic.Models.Shop.Category 
+﻿@model Petclinic.Areas.Admin.ViewModels.DeleteProductViewModel
 
-<div class="container body" asp-ac>
-    <div class="col-lg-6 location-contact">
-        <div class="heading-image mb-3">
-            <img src="~/img/vet.svg" alt="Petclinic logo"/>
-            <h3 class="heading-main heading-small">Delete Category</h3>
-        </div>
-        <form class="form" autocomplete="off" method="post">
-            <span class="text-danger d-block" asp-validation-for="Name"></span>
-            <div class="form__group">
-                <img class="form__icon" src="~/img/icons/apps.svg" alt="category icon"/>
-                <input asp-for="Name" disabled type="text" class="form__input" placeholder="Category Name" required/>
-                <label asp-for="Name" for="name" class=form__label>Category Name</label>
-            </div>
-            <span class="text-danger d-block" asp-validation-for="DisplayOrder"></span>
-            <div class="form__group">
-                <img class="form__icon" src="~/img/icons/list.svg" alt="user icon"/>
-                <input asp-for="DisplayOrder" disabled type="number" class="form__input" placeholder="Display Order" />
-                <label asp-for="DisplayOrder" class=form__label>Display Order</label>
-            </div>
-            <button asp-controller="Category" asp-action="Delete" asp-route-id="@Model.Id" type="submit" class="btn text-light bg-danger btn-block text-uppercase">
-                <i class="bi bi-trash3-fill mr-1"></i>Delete
-            </button>
-            <a type="button" asp-controller="Category" asp-action="Index" class="btn bg-warning btn-block text-uppercase mt-4">
-                <i class="bi bi-arrow-left mr-2"></i>Back To List
-            </a>
-        </form>
+<div class="container body py-5">
+    <div class="heading-image mb-3">
+        <img src="~/img/vet.svg" alt="Petclinic logo"/>
+        <h3 class="heading-main heading-small">Create New Product</h3>
     </div>
+    <form class="form" asp-controller="Product" asp-action="Create" enctype="multipart/form-data" autocomplete="off" method="post" >
+        <div class="row">
+            <div class="col-md-6">
+                <span class="text-danger d-block" asp-validation-for="Product.Name"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/package.svg" alt="Product icon"/>
+                    <input disabled asp-for="Product.Name" type="text" class="form__input" placeholder="Product Name" required/>
+                    <label asp-for="Product.Name" class=form__label>Product Name</label>
+                </div>
+                <span class="text-danger d-block" asp-validation-for="Product.ListPrice"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/price-tag.svg" alt="price icon"/>
+                    <input disabled asp-for="Product.ListPrice" type="number" class="form__input" placeholder="List Price"/>
+                    <label asp-for="Product.ListPrice" class=form__label>List Price</label>
+                </div>
+                <span class="text-danger d-block" asp-validation-for="Product.Price"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/price-tag_red.svg" alt="price icon"/>
+                    <input disabled asp-for="Product.Price" type="number" class="form__input" placeholder="Price"/>
+                    <label asp-for="Product.Price" class=form__label>Price</label>
+                </div>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/price-tag_yellow.svg" alt="price icon"/>
+                    <input disabled asp-for="Product.Price50" type="number" class="form__input" placeholder="Price 50"/>
+                    <label asp-for="Product.Price50" class=form__label>Price 50</label>
+                </div>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/price-tag_green.svg" alt="price icon"/>
+                    <input disabled asp-for="Product.Price100" type="number" class="form__input" placeholder="Price 100"/>
+                    <label asp-for="Product.Price100" class=form__label>Price 100</label>
+                </div>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/information.svg" alt="description icon"/>
+                    <textarea asp-for="Product.Description" disabled id="problem" rows=10 type="text" class="form__input" placeholder="Description" required></textarea>
+                    <label for="problem" class=form__label>Description</label>
+                </div>
+                <button asp-action="Delete" asp-route-id="@Model.Product.Id" type="submit" class="btn text-light bg-danger btn-block text-uppercase">
+                    <i class="bi bi-trash3-fill mr-1"></i>Delete
+                </button>
+                <a type="button" asp-controller="Product" asp-action="Index" class="btn bg-warning btn-block text-uppercase mt-4">
+                    <i class="bi bi-arrow-left mr-2"></i>Back To List
+                </a>
+            </div>
+            <div class="col-md-6">
+                <span class="text-danger d-block" asp-validation-for="Product.CategoryId"></span>
+                <select disabled asp-for="Product.CategoryId" class="select mb-3" asp-items="@Model.Categories">
+                    <option disabled selected>-- Select Category --</option>
+                </select>
+                <span class="text-danger d-block" asp-validation-for="Product.Producer"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/engineering.svg" alt="Product icon"/>
+                    <input disabled asp-for="Product.Producer" type="text" class="form__input" placeholder="Producer" required/>
+                    <label asp-for="Product.Producer" class=form__label>Producer</label>
+                </div>
+                <div class="upload">
+                    <figure>
+                        <figcaption id="file-name"></figcaption>
+                        @if (@Model.Product.ImageUrl != null)
+                        {
+                            <img class="upload__image" id="chosen-image" src="/@Model.Product.ImageUrl" alt="@Model.Product.Name"/>
+                        }
+                        else
+                        {
+                            <img class="upload__image" id="chosen-image" src="~/img/no-images.svg" alt="No Image"/>
+                        }
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>

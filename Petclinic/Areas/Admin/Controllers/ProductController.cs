@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.IO;
 using System.Linq;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Petclinic.Areas.Admin.ViewModels;
-using PetClinic.Models.Shop;
 using Petclinic.Repository.IRepository;
 
 namespace Petclinic.Areas.Admin.Controllers
@@ -11,15 +13,17 @@ namespace Petclinic.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _db;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ProductController(IUnitOfWork db)
+        public ProductController(IUnitOfWork db, IWebHostEnvironment webHostEnvironment)
         {
             _db = db;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public IActionResult Index()
         {
-            var objProductList = _db.Product.GetAll();
+            var objProductList = _db.Product.GetAll("Category");
             return View(objProductList);
         }
 
@@ -39,14 +43,29 @@ namespace Petclinic.Areas.Admin.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult Create(Product product)
+        public IActionResult Create(CreateProductViewModel viewModel, IFormFile? file)
         {
 
             if (ModelState.IsValid)
             {
-                _db.Product.Add(product);
+                if (file != null)
+                {
+                    var wwwRootPath = _webHostEnvironment.WebRootPath;
+                    var fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"app_images\products");
+                    var extension = Path.GetExtension(file.FileName);
+
+                    using (var fileStream =
+                           new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    };
+                    viewModel.Product.ImageUrl = @"app_images\products\" + fileName + extension;
+                }
+
+                _db.Product.Add(viewModel.Product);
                 _db.Save();
-                ReturnTempMessage("success", $"Product '{product.Name}' has been created.");
+                ReturnTempMessage("success", $"Product '{viewModel.Product.Name}' has been created.");
                 return RedirectToAction("Index");
             }
 
@@ -67,21 +86,54 @@ namespace Petclinic.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            return View();
+            var viewModel = new EditProductViewModel
+            {
+                Product = productFromDb,
+                Categories = _db.Category.GetAll().Select(
+                    u => new SelectListItem
+                    {
+                        Text = u.Name,
+                        Value = u.Id.ToString()
+                    })
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult Edit(Product product)
+        public IActionResult Edit(EditProductViewModel viewModel, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
-                _db.Product.Update(product);
+                if (file != null)
+                {
+                    var wwwRootPath = _webHostEnvironment.WebRootPath;
+                    var fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"app_images\products");
+                    var extension = Path.GetExtension(file.FileName);
+
+                    using (var fileStream =
+                           new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    };
+                    viewModel.Product.ImageUrl = @"app_images\products\" + fileName + extension;
+                    var productFromDb = _db.Product.GetFirstOrDefault(u => u.Id == viewModel.Product.Id);
+                    if (productFromDb != null && productFromDb.ImageUrl != null)
+                    {
+                        var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, productFromDb.ImageUrl.TrimStart('\\'));
+                        DeleteImage(oldImagePath);
+                    }
+                }
+
+                _db.Product.Update(viewModel.Product);
                 _db.Save();
+                ReturnTempMessage("success", $"Product '{viewModel.Product.Name}' has been updated.");
                 return RedirectToAction("Index");
             }
 
-            ReturnTempMessage("danger", "Something went wrong! We could not create new product :(");
+            ReturnTempMessage("danger", "Something went wrong! We could not update product :(");
             return View("Create");
         }
 
@@ -98,7 +150,18 @@ namespace Petclinic.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            return View();
+            var viewModel = new DeleteProductViewModel
+            {
+                Product = productFromDb,
+                Categories = _db.Category.GetAll().Select(
+                    u => new SelectListItem
+                    {
+                        Text = u.Name,
+                        Value = u.Id.ToString()
+                    })
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost, ActionName("Delete")]
@@ -107,6 +170,13 @@ namespace Petclinic.Areas.Admin.Controllers
         {
             var obj = _db.Product.GetFirstOrDefault(u => u.Id == id);
             if (obj is null) return NotFound();
+
+            if (obj.ImageUrl != null)
+            {
+                var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, obj.ImageUrl.TrimStart('\\'));
+                DeleteImage(oldImagePath);
+            }
+            
             _db.Product.Remove(obj);
             _db.Save();
             ReturnTempMessage("danger", $"Product '{obj.Name}' is deleted.");
@@ -118,5 +188,14 @@ namespace Petclinic.Areas.Admin.Controllers
             TempData["Message"] = message;
             TempData["Type"] = type;
         }
+        private static void DeleteImage(string imagePath)
+        {
+            if (System.IO.File.Exists(imagePath))
+            {
+                System.IO.File.Delete(imagePath);
+            }
+        }
     }
+
+    
 }
