@@ -22,7 +22,7 @@ namespace Petclinic.Repository.Repository
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null)
         {
             IQueryable<T> query = DbSet;
-            var queryable = query.Where(filter);
+            query = query.Where(filter);
             if (includeProperties != null)
             {
                 foreach (var includeProp in includeProperties
@@ -31,7 +31,7 @@ namespace Petclinic.Repository.Repository
                     query = query.Include(includeProp);
                 }
             }
-            return queryable.FirstOrDefault();
+            return query.FirstOrDefault();
         }
 
         public IEnumerable<T> GetAll(string? includeProperties = null)

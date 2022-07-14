@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics;
 using PetClinic.Models.Clinic;
 using PetClinic.Models.Shop;
 
-namespace Petclinic.Controllers
+namespace Petclinic.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -32,7 +34,7 @@ namespace Petclinic.Controllers
             return Redirect(Url.Action("Index", "Home") + "#location");
         }
 
-
+        [Authorize]
         public IActionResult Blog()
         {
             return View();
