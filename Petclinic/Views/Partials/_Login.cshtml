@@ -7,11 +7,11 @@
 @if (_signInManager.IsSignedIn(User))
 {
     var userName = User.Claims.FirstOrDefault(claim => claim.Type == "firstName");
-   @* var claims = User.Claims.ToList();
+    var claims = User.Claims.ToList();
     foreach (var claim in claims)
     {
         @claim
-    }*@
+    }
 
     <li class="nav-item">
         <a class="nav-link text-light" href="#">

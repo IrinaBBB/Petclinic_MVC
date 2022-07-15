@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using PetClinic.Models.Clinic;
+using PetClinic.Utility;
 
 namespace Petclinic.Areas.Identity.Pages.Account
 {
@@ -24,17 +25,19 @@ namespace Petclinic.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityAppUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<IdentityAppUser> userManager,
             SignInManager<IdentityAppUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         [BindProperty]
@@ -52,6 +55,14 @@ namespace Petclinic.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
             [Required]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+
+            [Required]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
+
+            [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -65,6 +76,14 @@ namespace Petclinic.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+            if (!_roleManager.RoleExistsAsync(Constants.RoleUserAdmin).GetAwaiter().GetResult())
+            {
+                _roleManager.CreateAsync(new IdentityRole(Constants.RoleUserAdmin)).GetAwaiter().GetResult();
+                _roleManager.CreateAsync(new IdentityRole(Constants.RoleUserCompany)).GetAwaiter().GetResult();
+                _roleManager.CreateAsync(new IdentityRole(Constants.RoleUserEmployee)).GetAwaiter().GetResult();
+                _roleManager.CreateAsync(new IdentityRole(Constants.RoleUserIndividual)).GetAwaiter().GetResult();
+            }
+          
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -75,7 +94,13 @@ namespace Petclinic.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new IdentityAppUser { UserName = Input.Email, Email = Input.Email };
+                var user = new IdentityAppUser
+                {
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    UserName = Input.Email, 
+                    Email = Input.Email
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
