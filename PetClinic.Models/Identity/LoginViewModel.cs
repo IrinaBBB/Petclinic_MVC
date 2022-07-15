@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PetClinic.Models.Shop
+namespace PetClinic.Models.Identity
 {
     public class LoginViewModel
     {

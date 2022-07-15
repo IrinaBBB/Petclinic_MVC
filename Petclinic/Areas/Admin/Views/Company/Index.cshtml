@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PetClinic.Models.Shop.Company> 
+
+<a asp-action="Create" class="cta-round right-top small bg-warning" data-toggle="tooltip" title="Book An Appointment">
+    <img src="~/img/cta/plus.svg" alt="Add a new product"/>
+</a>
+<div class="container-fluid body pb-5">
+    <div class="heading-image mb-3 mt-4">
+        <h3 class="heading-main heading-small">Companies</h3>
+    </div>
+    <partial name="~/Views/Partials/_TempData.cshtml"/>
+    <table id="products_table" class="table">
+        <thead>
+        <tr class="table-row header blue">
+            <th class="cell">Name</th>
+            <th class="cell">Street Address</th>
+            <th class="cell">City</th>
+            <th class="cell">State</th>
+            <th class="cell">Postal Code</th>
+            <th class="cell">Phone Number</th>
+            <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
+            <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-row">
+                <td class="cell left" data-title="Name">
+                    <a href="#">
+                        @item.Name
+                    </a>
+                </td>
+                <td class="cell left" data-title="Street Address">
+                    @item.StreetAddress
+                </td>
+                <td class="cell left" data-title="City">
+                    @item.City
+                </td>
+                <td class="cell left" data-title="State">
+                    @item.State
+                </td>
+                <td class="cell left" data-title="Postal Code">
+                    @item.PostalCode
+                </td>
+                <td class="cell left" data-title="PhoneNumber">
+                    @item.PhoneNumber
+                </td>
+                <td class="cell" data-title="">
+                    <span class="rotating-btn edit">
+                        <a asp-action="Edit" asp-route-id="@item.Id"></a>
+                    </span>
+                </td>
+                <td class="cell" data-title="">
+                    <span class="rotating-btn delete">
+                        <a asp-action="Delete" asp-route-id="@item.Id"></a>
+                    </span>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#products_table').DataTable();
+        });
+    </script>
+}

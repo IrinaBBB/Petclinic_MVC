@@ -1,0 +1,56 @@
+﻿@model PetClinic.Models.Shop.Company
+
+<div class="container body py-5">
+    <div class="heading-image mb-3">
+        <img src="~/img/vet.svg" alt="Petclinic logo"/>
+        <h3 class="heading-main heading-small">Create Company</h3>
+    </div>
+    <form asp-action="Create" autocomplete="off" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <span class="text-danger d-block" asp-validation-for="Name"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/next.svg" alt="Company icon"/>
+                    <input asp-for="Name" type="text" class="form__input" placeholder="Company Name" required/>
+                    <label asp-for="Name" class=form__label>Company Name</label>
+                </div>
+                <span class="text-danger d-block" asp-validation-for="StreetAddress"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/next.svg" alt="next icon"/>
+                    <input asp-for="StreetAddress" type="text" class="form__input" placeholder="Street Address"/>
+                    <label asp-for="StreetAddress" class=form__label>Street Address</label>
+                </div>
+                <span class="text-danger d-block" asp-validation-for="City"></span>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/next.svg" alt="next icon"/>
+                    <input asp-for="City" type="text" class="form__input" placeholder="City"/>
+                    <label asp-for="City" class=form__label>City</label>
+                </div>
+                <button type="submit" class="btn btn-light btn-block text-uppercase">
+                    <i class="bi bi-file-plus mr-2"></i>Create
+                </button>
+                <a type="button" asp-action="Index" class="btn bg-warning btn-block text-uppercase mt-4">
+                    <i class="bi bi-arrow-left mr-2"></i>Back To List
+                </a>
+            </div>
+            <div class="col-md-6">
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/next.svg" alt="next icon"/>
+                    <input asp-for="State" type="text" class="form__input" placeholder="State"/>
+                    <label asp-for="State" class=form__label>State</label>
+                </div>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/next.svg" alt="next icon"/>
+                    <input asp-for="PostalCode" type="number" class="form__input" placeholder="Postal Code"/>
+                    <label asp-for="PostalCode" class=form__label>Postal Code</label>
+                </div>
+                <div class="form__group">
+                    <img class="form__icon" src="~/img/icons/next.svg" alt="next icon"/>
+                    <input asp-for="PhoneNumber" type="number" class="form__input" placeholder="Phone Number"/>
+                    <label asp-for="PhoneNumber" class=form__label>Phone Number</label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

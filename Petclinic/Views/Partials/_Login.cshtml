@@ -30,11 +30,10 @@
                 !</span>
             </a>
             <div class="dropdown-menu">
-                <a class="d-block text-dark py-1 ml-3"
-                   asp-area="" asp-controller="Account" asp-action="EnableAuthenticator">
+                <a class="d-block text-dark py-1 ml-3" asp-area="Identity" asp-page="/Account/Register">
                     Setup Two Factor Authentication
                 </a>
-                <form method="post" class="d-block text-dark py-1 ml-3" asp-area="" asp-controller="Account" asp-action="Logout">
+                <form method="post" class="d-block text-dark py-1 ml-3" asp-area="Identity" asp-page="/Account/Logout">
                     <button type="submit" class="btn btn-link">Log out</button>
                 </form>
             </div>
@@ -44,6 +43,6 @@
 else
 {
     <li class="nav-item">
-        <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+        <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
     </li>
 }
