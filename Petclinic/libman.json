@@ -23,8 +23,8 @@
       "destination": "wwwroot/lib/datatables.net"
     },
     {
-      "library": "limonte-sweetalert2@11.4.20",
-      "destination": "wwwroot/lib/limonte-sweetalert2/"
+      "library": "bootstrap@4.5.3",
+      "destination": "wwwroot/lib/bootstrap/"
     }
   ]
 }
