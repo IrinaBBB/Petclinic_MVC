@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PetClinic.Models\PetClinic.Models.csproj" />
+    <ProjectReference Include="..\PetClinic.Utility\PetClinic.Utility.csproj" />
   </ItemGroup>
 
 </Project>
