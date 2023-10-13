@@ -1,11 +1,14 @@
 ﻿@model IEnumerable<PetClinic.Models.Shop.Product> 
 
-<a asp-controller="Product" asp-action="Create" class="cta-round right-top small bg-warning" data-toggle="tooltip" title="Book An Appointment">
-    <img src="~/img/cta/plus.svg" alt="Add a new product"/>
-</a>
+
 <div class="container-fluid body pb-5">
-    <div class="heading-image mb-3 mt-4">
-        <h3 class="heading-main heading-small">Products</h3>
+    <div class="d-flex justify-content-between mb-3">
+        <span class="d-flex flex-column justify-content-center">
+            <h3 class="heading-main heading-small mb-0">Products</h3>
+        </span>
+        <a asp-action="Create" class="btn-add bg-warning" data-toggle="tooltip" title="Add a new product">
+            <img src="~/img/cta/plus.svg" alt="Add a new product" />
+        </a>
     </div>
     <partial name="~/Views/Partials/_TempData.cshtml"/>
     <table id="products_table" class="table">
