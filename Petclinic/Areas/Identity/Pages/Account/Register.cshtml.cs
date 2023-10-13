@@ -76,14 +76,6 @@ namespace Petclinic.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            if (!_roleManager.RoleExistsAsync(Constants.RoleUserAdmin).GetAwaiter().GetResult())
-            {
-                _roleManager.CreateAsync(new IdentityRole(Constants.RoleUserAdmin)).GetAwaiter().GetResult();
-                _roleManager.CreateAsync(new IdentityRole(Constants.RoleUserCompany)).GetAwaiter().GetResult();
-                _roleManager.CreateAsync(new IdentityRole(Constants.RoleUserEmployee)).GetAwaiter().GetResult();
-                _roleManager.CreateAsync(new IdentityRole(Constants.RoleUserIndividual)).GetAwaiter().GetResult();
-            }
-          
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }

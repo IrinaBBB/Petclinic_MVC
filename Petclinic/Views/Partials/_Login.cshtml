@@ -6,13 +6,6 @@
 
 @if (_signInManager.IsSignedIn(User))
 {
-    var userName = User.Claims.FirstOrDefault(claim => claim.Type == "firstName");
-    var claims = User.Claims.ToList();
-    foreach (var claim in claims)
-    {
-        @claim
-    }
-
     <li class="nav-item">
         <a class="nav-link text-light" href="#">
 
@@ -21,13 +14,7 @@
     <li class="nav-item">
         <div class="dropdown">
             <a class="nav-link text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                @*<span style="margin-right:2px;">Hello, @_userManager.GetUserName(User)!</span>*@
-                <span style="margin-right:2px;">Hello, 
-                @if (userName != null)
-                {
-                    @userName.Value
-                }
-                !</span>
+                <span style="margin-right:2px;">Hello, @_userManager.GetUserName(User)!</span>
             </a>
             <div class="dropdown-menu">
                 <a class="d-block text-dark py-1 ml-3" asp-area="Identity" asp-page="/Account/Register">
