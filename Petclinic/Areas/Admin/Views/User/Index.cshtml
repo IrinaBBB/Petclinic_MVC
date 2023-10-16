@@ -20,6 +20,7 @@
             <th class="cell">Role</th>
             <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
             <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
+            <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
         </tr>
         </thead>
         <tbody>
@@ -39,15 +40,21 @@
                     @item.Role
                 </td>
                 <td class="cell" data-title="">
+                    <span class="rotating-btn roles">
+                        <a asp-controller="Roles" asp-action="Index"></a>
+                    </span>
+                </td>
+                <td class="cell" data-title="">
                     <span class="rotating-btn edit">
-                        <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id"></a>
+                        <a asp-action="Edit" asp-route-id="@item.Id"></a>
                     </span>
                 </td>
                 <td class="cell" data-title="">
                     <span class="rotating-btn delete">
-                        <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"></a>
                     </span>
                 </td>
+
             </tr>
         }
         </tbody>

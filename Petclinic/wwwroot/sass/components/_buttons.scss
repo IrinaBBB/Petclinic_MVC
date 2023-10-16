@@ -41,6 +41,26 @@ span.rotating-btn a:hover {
     transform: translateZ(-12px) rotateX(-90deg);
 }
 
+// Roles
+span.rotating-btn.roles a:before {
+    border: 2px solid midnightblue;
+    content: "ROLES";
+}
+
+span.rotating-btn.roles a:after {
+    border: 2px solid midnightblue;
+    content: "\F4CF";
+    font-family: "bootstrap-icons";
+}
+
+span.rotating-btn.roles a:before {
+    background: midnightblue;
+}
+
+span.rotating-btn.roles a:after {
+    color: midnightblue;
+}
+
 // EDIT
 span.rotating-btn.edit a:before {
     border: 2px solid green;
@@ -98,7 +118,6 @@ span.rotating-btn.delete a:after {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 100;
     }
 
     &:hover {

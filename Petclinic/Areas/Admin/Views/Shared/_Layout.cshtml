@@ -4,7 +4,6 @@
 @inject UserManager<IdentityAppUser> UserManager
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,8 +21,13 @@
     <!-- Data Tables CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 
+
     <!-- Custom styles for this template-->
     <link href="~/vendor/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- ToastR -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="~/css/site.css"/>
 </head>
 
@@ -436,6 +440,9 @@
 <!-- Page level custom scripts -->
 <script src="~/vendor/js/demo/chart-area-demo.js"></script>
 <script src="~/vendor/js/demo/chart-pie-demo.js"></script>
+
+<!-- ToastR -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 @await RenderSectionAsync("Scripts", required: false)
 </body>

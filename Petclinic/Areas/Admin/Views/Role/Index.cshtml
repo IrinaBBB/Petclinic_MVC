@@ -1,0 +1,65 @@
+﻿@model IEnumerable<IdentityRole>
+
+
+<div class="container-fluid body pb-5">
+    <div class="d-flex justify-content-between mb-3">
+        <span class="d-flex flex-column justify-content-center">
+            <h3 class="heading-main heading-small mb-0">Roles</h3>
+        </span>
+        <a asp-action="Upsert" class="btn-add bg-warning" data-toggle="tooltip" title="Add a new product">
+            <img src="~/img/cta/plus.svg" alt="Add a new product"/>
+        </a>
+    </div>
+    <partial name="~/Views/Partials/_ToastR.cshtml"/>
+    <table id="roles_table" class="table">
+        <thead>
+        <tr class="table-row header blue">
+            <th class="cell">Id</th>
+            <th class="cell">Name</th>
+            <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
+            <th class="cell sorting_desc_disabled sorting_asc_disabled">&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                <tr class="table-row">
+                    <td class="cell left" data-title="Name">
+                        @item.Id
+                    </td>
+                    <td class="cell left" data-title="Price">
+                        @item.Name
+                    </td>
+                    <td class="cell" data-title="">
+                        <span class="rotating-btn edit">
+                            <a asp-action="Upsert" asp-route-id="@item.Id"></a>
+                        </span>
+                    </td>
+                    <td class="cell" data-title="">
+                        <span class="rotating-btn delete">
+                            <a asp-action="Delete" asp-route-id="@item.Id"></a>
+                        </span>
+                    </td>
+
+                </tr>
+            }
+        }
+        else
+        {
+            <tr class="table-row">
+                No roles registered
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#roles_table').DataTable();
+        });
+    </script>
+}
