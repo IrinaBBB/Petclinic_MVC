@@ -11,7 +11,7 @@
             <div class="form__group">
                 <img class="form__icon" src="~/img/icons/apps.svg" alt="category icon"/>
                 <input asp-for="Name" type="text" class="form__input" placeholder="Category Name" required/>
-                <label asp-for="Name" for="name" class=form__label>Category Name</label>
+                <label asp-for="Name" class=form__label>Category Name</label>
             </div>
             <span class="text-danger d-block" asp-validation-for="DisplayOrder"></span>
             <div class="form__group">
@@ -22,7 +22,7 @@
             <button type="submit" class="btn btn-light btn-block text-uppercase">
                 <i class="bi bi-file-plus mr-2"></i>Create
             </button>
-            <a type="button" asp-controller="Category" asp-action="Index" class="btn bg-warning btn-block text-uppercase mt-4">
+            <a type="button" asp-controller="Category" asp-action="Index" class="btn bg-secondary text-light btn-block text-uppercase mt-4">
                 <i class="bi bi-arrow-left mr-2"></i>Back To List
             </a>
         </form>

@@ -105,19 +105,19 @@ span.rotating-btn.roles a:after {
   color: midnightblue; }
 
 span.rotating-btn.edit a:before {
-  border: 2px solid green;
+  border: 2px solid #325DE9;
   content: "EDIT"; }
 
 span.rotating-btn.edit a:after {
-  border: 2px solid green;
+  border: 2px solid #325DE9;
   content: "\F4C7";
   font-family: "bootstrap-icons"; }
 
 span.rotating-btn.edit a:before {
-  background: green; }
+  background: #325DE9; }
 
 span.rotating-btn.edit a:after {
-  color: green; }
+  color: #325DE9; }
 
 span.rotating-btn.delete a:before {
   border: 2px solid red;
@@ -136,14 +136,15 @@ span.rotating-btn.delete a:after {
 
 /* ADD BUTTON */
 .btn-add {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   position: relative;
   border-radius: 50%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
-  transition: all .2s ease-in-out; }
+  transition: all .2s ease-in-out;
+  background: #325DE9; }
   .btn-add img {
-    width: 40px;
+    width: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
