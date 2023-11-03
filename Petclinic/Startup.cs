@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Petclinic.DataAccess;
 using PetClinic.DataAccess;
 using PetClinic.Models.Clinic;
 using Petclinic.Repository.IRepository;
@@ -41,6 +42,10 @@ namespace Petclinic
             services.AddDbContext<IdentityContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+            });
+            services.AddDbContext<BlogContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("BlogConnection"));
             });
             services.AddIdentity<IdentityAppUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityContext>()

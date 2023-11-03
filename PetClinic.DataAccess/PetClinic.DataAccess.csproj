@@ -19,4 +19,8 @@
     <ProjectReference Include="..\PetClinic.Utility\PetClinic.Utility.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\BlogMigrations\" />
+  </ItemGroup>
+
 </Project>
