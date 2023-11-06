@@ -8,11 +8,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Petclinic.DataAccess;
 using PetClinic.DataAccess;
-using PetClinic.Models.Clinic;
 using Petclinic.Repository.IRepository;
 using Petclinic.Repository.Repository;
 using PetClinic.Utility;
 using System;
+using PetClinic.DataAccess.Entities.Identity;
 
 namespace Petclinic
 {
@@ -48,7 +48,7 @@ namespace Petclinic
             {
                 options.UseSqlServer(Configuration.GetConnectionString("BlogConnection"));
             });
-            services.AddIdentity<IdentityAppUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityContext>()
                 .AddDefaultTokenProviders()
                 .AddDefaultUI();

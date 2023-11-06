@@ -1,4 +1,5 @@
-﻿@model IdentityAppUser
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model PetClinic.DataAccess.Entities.Identity.ApplicationUser
 @{
     var roleSelectItems = Model.RoleList?.Select(u => new SelectListItem
     {

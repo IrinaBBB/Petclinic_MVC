@@ -1,6 +1,6 @@
-﻿using PetClinic.Models.Blog;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using PetClinic.ViewModel.Blog;
 
 namespace Petclinic.Repository.IRepository
 {

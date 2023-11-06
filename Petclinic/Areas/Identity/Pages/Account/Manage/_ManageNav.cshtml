@@ -1,4 +1,6 @@
-﻿@inject SignInManager<IdentityAppUser> SignInManager
+﻿@using PetClinic.DataAccess.Entities.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

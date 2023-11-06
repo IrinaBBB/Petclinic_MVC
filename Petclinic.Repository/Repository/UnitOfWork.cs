@@ -3,7 +3,7 @@ using Petclinic.DataAccess;
 using PetClinic.DataAccess;
 using Petclinic.Repository.IRepository;
 using Microsoft.AspNetCore.Identity;
-using PetClinic.Models.Clinic;
+using PetClinic.DataAccess.Entities.Identity;
 
 namespace Petclinic.Repository.Repository
 {
@@ -12,7 +12,7 @@ namespace Petclinic.Repository.Repository
         private readonly ShopDbContext _db;
         private readonly BlogDbContext _blogDb;
 
-        public UnitOfWork(ShopDbContext db, BlogDbContext blogDb, UserManager<IdentityAppUser> userManager, IMapper mapper)
+        public UnitOfWork(ShopDbContext db, BlogDbContext blogDb, UserManager<ApplicationUser> userManager, IMapper mapper)
         {
             _db = db;
             _blogDb = blogDb;

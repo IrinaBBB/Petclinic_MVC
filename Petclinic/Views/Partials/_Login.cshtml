@@ -1,8 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using PetClinic.Models.Clinic
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using PetClinic.DataAccess.Entities.Identity
 
-@inject SignInManager<IdentityAppUser> _signInManager
-@inject UserManager<IdentityAppUser> _userManager
+@inject SignInManager<ApplicationUser> _signInManager
+@inject UserManager<ApplicationUser> _userManager
 
 @if (_signInManager.IsSignedIn(User))
 {

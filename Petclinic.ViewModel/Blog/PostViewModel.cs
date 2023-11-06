@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System;
-using PetClinic.Models.Clinic;
+using PetClinic.DataAccess.Entities.Identity;
 
-namespace PetClinic.Models.Blog
+namespace PetClinic.ViewModel.Blog
 {
     public class PostViewModel
     {
@@ -15,7 +15,7 @@ namespace PetClinic.Models.Blog
 
         [StringLength(450)]
         public string AuthorId { get; set; }
-        public IdentityAppUser Author { get; set; }
+        public ApplicationUser Author { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;
         public DateTime Updated { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using PetClinic.DataAccess.Entities.Blog;
-using PetClinic.Models.Blog;
+using PetClinic.ViewModel.Blog;
 
 namespace Petclinic.Repository.Mapping
 {

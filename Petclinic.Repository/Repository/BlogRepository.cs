@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Petclinic.DataAccess;
-using PetClinic.Models.Blog;
 using Petclinic.Repository.IRepository;
-using PetClinic.Models.Clinic;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using PetClinic.DataAccess.Entities.Identity;
+using PetClinic.ViewModel.Blog;
 
 namespace Petclinic.Repository.Repository
 {
     public class BlogRepository : IBlogRepository
     {
         private readonly BlogDbContext _db;
-        private readonly UserManager<IdentityAppUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IMapper _mapper;
 
-        public BlogRepository(BlogDbContext db, UserManager<IdentityAppUser> userManager, IMapper mapper)
+        public BlogRepository(BlogDbContext db, UserManager<ApplicationUser> userManager, IMapper mapper)
         {
             _db = db;
             _userManager = userManager;

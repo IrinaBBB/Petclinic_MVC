@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using PetClinic.DataAccess;
 using Microsoft.AspNetCore.Identity;
-using PetClinic.Models.Clinic;
 using System.Linq;
 using System.Threading.Tasks;
+using PetClinic.DataAccess.Entities.Identity;
 
 namespace Petclinic.Areas.Admin.Controllers
 {
@@ -13,10 +13,10 @@ namespace Petclinic.Areas.Admin.Controllers
     public class RoleController : Controller
     {
         private readonly IdentityContext _db;
-        private readonly UserManager<IdentityAppUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public RoleController(IdentityContext db, UserManager<IdentityAppUser> userManager,
+        public RoleController(IdentityContext db, UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
             _db = db;

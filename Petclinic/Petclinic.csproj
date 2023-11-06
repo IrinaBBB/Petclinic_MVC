@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PetClinic.DataAccess\PetClinic.DataAccess.csproj" />
-    <ProjectReference Include="..\PetClinic.Models\PetClinic.Models.csproj" />
+    <ProjectReference Include="..\PetClinic.ViewModel\PetClinic.ViewModel.csproj" />
     <ProjectReference Include="..\Petclinic.Repository\Petclinic.Repository.csproj" />
     <ProjectReference Include="..\PetClinic.Utility\PetClinic.Utility.csproj" />
   </ItemGroup>

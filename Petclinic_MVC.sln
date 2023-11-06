@@ -5,13 +5,15 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petclinic", "Petclinic\Petclinic.csproj", "{AEF75A60-AD68-4603-A491-6F07953D5FB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetClinic.DataAccess", "PetClinic.DataAccess\PetClinic.DataAccess.csproj", "{29F7D5AC-25D1-4730-BCD6-E125306F3793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetClinic.DataAccess", "PetClinic.DataAccess\PetClinic.DataAccess.csproj", "{29F7D5AC-25D1-4730-BCD6-E125306F3793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetClinic.Models", "PetClinic.Models\PetClinic.Models.csproj", "{A01DCDE1-DECC-41D3-BA18-01F4EDD9E702}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetClinic.Models", "PetClinic.Models\PetClinic.Models.csproj", "{A01DCDE1-DECC-41D3-BA18-01F4EDD9E702}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetClinic.Utility", "PetClinic.Utility\PetClinic.Utility.csproj", "{8AE8E855-995E-46B4-B988-30D3193A2AED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetClinic.Utility", "PetClinic.Utility\PetClinic.Utility.csproj", "{8AE8E855-995E-46B4-B988-30D3193A2AED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petclinic.Repository", "Petclinic.Repository\Petclinic.Repository.csproj", "{AC2F588F-33FB-47E2-8741-E1F33C26A076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petclinic.Repository", "Petclinic.Repository\Petclinic.Repository.csproj", "{AC2F588F-33FB-47E2-8741-E1F33C26A076}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetClinic.ViewModel", "Petclinic.ViewModel\PetClinic.ViewModel.csproj", "{6804B3FA-B27E-4A60-B734-C4FC82526BC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{AC2F588F-33FB-47E2-8741-E1F33C26A076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC2F588F-33FB-47E2-8741-E1F33C26A076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC2F588F-33FB-47E2-8741-E1F33C26A076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6804B3FA-B27E-4A60-B734-C4FC82526BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6804B3FA-B27E-4A60-B734-C4FC82526BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6804B3FA-B27E-4A60-B734-C4FC82526BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6804B3FA-B27E-4A60-B734-C4FC82526BC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

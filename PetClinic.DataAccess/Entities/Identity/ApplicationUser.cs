@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
-namespace PetClinic.Models.Clinic
+namespace PetClinic.DataAccess.Entities.Identity
 {
-    public class IdentityAppUser : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         [Required] [StringLength(128)] public string? FirstName { get; set; }
         [Required] [StringLength(128)] public string? LastName { get; set; }

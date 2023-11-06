@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PetClinic.Models.Blog
+namespace PetClinic.ViewModel.Blog
 {
     public class BlogMainViewModel
     {
