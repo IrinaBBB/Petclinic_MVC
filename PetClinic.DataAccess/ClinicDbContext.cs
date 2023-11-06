@@ -3,9 +3,9 @@ using PetClinic.Models.Clinic;
 
 namespace PetClinic.DataAccess
 {
-    public class DataContext : DbContext
+    public class ClinicDbContext : DbContext
     {
-        public DataContext(DbContextOptions options) : base(options) { }
+        public ClinicDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Specialty> Specialties { get; set; }
         public DbSet<Owner> Owners { get; set; }

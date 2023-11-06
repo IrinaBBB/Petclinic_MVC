@@ -5,7 +5,7 @@ using Petclinic.Repository.IRepository;
 
 namespace Petclinic.Areas.Customer.Controllers
 {
-    [Area("Customer")]
+    [Area("Shop")]
     public class ShopController : Controller
     {
         private readonly IUnitOfWork _db;
