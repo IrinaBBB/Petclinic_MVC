@@ -21,7 +21,7 @@ namespace Petclinic
             try
             {
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-                var blogContext = services.GetRequiredService<BlogContext>();
+                var blogContext = services.GetRequiredService<BlogDbContext>();
                 await SeedRoles.SeedRolesAsync(roleManager, loggerFactory);
                 await SeedBlog.SeedAsync(blogContext, loggerFactory);
             }

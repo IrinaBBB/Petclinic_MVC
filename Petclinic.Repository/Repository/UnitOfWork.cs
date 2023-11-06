@@ -10,9 +10,9 @@ namespace Petclinic.Repository.Repository
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ShopDbContext _db;
-        private readonly BlogContext _blogDb;
+        private readonly BlogDbContext _blogDb;
 
-        public UnitOfWork(ShopDbContext db, BlogContext blogDb, UserManager<IdentityAppUser> userManager, IMapper mapper)
+        public UnitOfWork(ShopDbContext db, BlogDbContext blogDb, UserManager<IdentityAppUser> userManager, IMapper mapper)
         {
             _db = db;
             _blogDb = blogDb;

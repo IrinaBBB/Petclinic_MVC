@@ -32,7 +32,7 @@ namespace Petclinic
 
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddDbContext<DataContext>(options =>
+            services.AddDbContext<ClinicDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
@@ -44,7 +44,7 @@ namespace Petclinic
             {
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
             });
-            services.AddDbContext<BlogContext>(options =>
+            services.AddDbContext<BlogDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("BlogConnection"));
             });

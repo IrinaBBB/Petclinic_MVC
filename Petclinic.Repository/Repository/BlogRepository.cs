@@ -16,11 +16,11 @@ namespace Petclinic.Repository.Repository
 {
     public class BlogRepository : IBlogRepository
     {
-        private readonly BlogContext _db;
+        private readonly BlogDbContext _db;
         private readonly UserManager<IdentityAppUser> _userManager;
         private readonly IMapper _mapper;
 
-        public BlogRepository(BlogContext db, UserManager<IdentityAppUser> userManager, IMapper mapper)
+        public BlogRepository(BlogDbContext db, UserManager<IdentityAppUser> userManager, IMapper mapper)
         {
             _db = db;
             _userManager = userManager;

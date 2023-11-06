@@ -9,7 +9,7 @@ using Petclinic.DataAccess;
 
 namespace PetClinic.DataAccess.Migrations.BlogMigrations
 {
-    [DbContext(typeof(BlogContext))]
+    [DbContext(typeof(BlogDbContext))]
     [Migration("20231103170640_AddPost")]
     partial class AddPost
     {

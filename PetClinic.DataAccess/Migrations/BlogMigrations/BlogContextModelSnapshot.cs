@@ -8,7 +8,7 @@ using Petclinic.DataAccess;
 
 namespace PetClinic.DataAccess.Migrations.BlogMigrations
 {
-    [DbContext(typeof(BlogContext))]
+    [DbContext(typeof(BlogDbContext))]
     partial class BlogContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

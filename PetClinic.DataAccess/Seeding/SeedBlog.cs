@@ -10,7 +10,7 @@ namespace PetClinic.DataAccess.Seeding
 {
     public class SeedBlog
     {
-        public static async Task SeedAsync(BlogContext context, ILoggerFactory loggerFactory)
+        public static async Task SeedAsync(BlogDbContext context, ILoggerFactory loggerFactory)
         {
             var posts = new List<Post>
             {
