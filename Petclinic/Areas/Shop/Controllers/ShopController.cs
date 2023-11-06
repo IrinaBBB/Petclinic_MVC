@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Petclinic.Areas.Customer.ViewModels;
 using Petclinic.Repository.IRepository;
 
 namespace Petclinic.Areas.Shop.Controllers

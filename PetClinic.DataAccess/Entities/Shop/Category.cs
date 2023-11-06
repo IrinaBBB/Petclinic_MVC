@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace PetClinic.Models.Shop
+namespace PetClinic.DataAccess.Entities.Shop
 {
     public class Category
     {
-        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -13,6 +12,7 @@ namespace PetClinic.Models.Shop
 
         [Range(1, 200)]
         public int? DisplayOrder { get; set; }
-        public DateTime CreatedDateTime { get; set; } = DateTime.Now;
+        public DateTime CreatedDateTime { get; set; } = DateTime.UtcNow;
     }
 }
+

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PetClinic.Models.Shop;
+using PetClinic.DataAccess.Entities.Shop;
 
 namespace PetClinic.DataAccess
 {
@@ -8,7 +8,7 @@ namespace PetClinic.DataAccess
         public ShopDbContext(DbContextOptions<ShopDbContext> options) : base(options) { }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Company> Companies { get; set; }
+        //public DbSet<Product> Products { get; set; }
+        //public DbSet<Company> Companies { get; set; }
     }
 }

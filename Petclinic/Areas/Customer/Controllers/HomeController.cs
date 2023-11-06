@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PetClinic.Models.Clinic;
-using PetClinic.Models.Shop;
 
 namespace Petclinic.Areas.Customer.Controllers
 {

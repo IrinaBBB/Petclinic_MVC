@@ -1,9 +1,9 @@
-﻿using PetClinic.Models.Shop;
+﻿//using PetClinic.Models.Shop;
 
-namespace Petclinic.Repository.IRepository
-{
-    public interface ICompanyRepository : IRepository<Company>
-    {
-        void Update(Company company);
-    }
-}
+//namespace Petclinic.Repository.IRepository
+//{
+//    public interface ICompanyRepository : IRepository<Company>
+//    {
+//        void Update(Company company);
+//    }
+//}
