@@ -1,0 +1,56 @@
+﻿.hero-section {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 85vh;
+    margin-bottom: 1rem;
+
+
+    img {
+        width: 100%;
+        position: relative;
+        margin-bottom: 3rem;
+        height: 85vh;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    &::after {
+        content: ""; // ::before and ::after both require content
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.3), rgba($primary-light, 0.3));
+        height: 85vh;
+    }
+
+    .overlay {
+        position: absolute;
+        padding: 5rem 5rem;
+        top: 0;
+        left: 0;
+        width: 60%;
+        font-weight: bold;
+        text-align: right;
+        font-size: 30px;
+        z-index: 20;
+    }
+}
+
+.bd-placeholder-img {
+    &::after {
+        content: ""; // ::before and ::after both require content
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.3), rgba($primary-light, 0.3));
+    }
+}
+
+.tags-background {
+    background-image: linear-gradient(to right bottom, rgba($primary-dark, 0.1), rgba($primary-light, 0.1));
+}

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Petclinic.DataAccess;
 using PetClinic.DataAccess.Seeding;
 using System;
 using System.Threading.Tasks;
@@ -20,7 +21,9 @@ namespace Petclinic
             try
             {
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                var blogContext = services.GetRequiredService<BlogContext>();
                 await SeedRoles.SeedRolesAsync(roleManager, loggerFactory);
+                await SeedBlog.SeedAsync(blogContext, loggerFactory);
             }
             catch (Exception ex)
             {

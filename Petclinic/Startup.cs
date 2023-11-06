@@ -12,6 +12,7 @@ using PetClinic.Models.Clinic;
 using Petclinic.Repository.IRepository;
 using Petclinic.Repository.Repository;
 using PetClinic.Utility;
+using System;
 
 namespace Petclinic
 {
@@ -52,6 +53,7 @@ namespace Petclinic
                 .AddDefaultTokenProviders()
                 .AddDefaultUI();
             services.AddSingleton<IEmailSender, EmailSender>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
