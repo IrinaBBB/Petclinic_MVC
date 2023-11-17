@@ -32,12 +32,16 @@
 
     &4 {
         font-size: 20px;
-        letter-spacing: 5px;
     }
 
     &__light {
         color: $color-white;
     }
+}
+
+.text-danger {
+    color: red!important;
+    text-transform: uppercase;
 }
 
 

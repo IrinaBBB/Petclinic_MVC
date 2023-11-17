@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\BlogMigrations\" />
+    <Folder Include="Migrations\ShopMigrations\" />
   </ItemGroup>
 
 </Project>

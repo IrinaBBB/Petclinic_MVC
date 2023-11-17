@@ -25,6 +25,10 @@
     {
       "library": "toastr.js@2.1.4",
       "destination": "wwwroot/lib/toastr.js/"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@4.0.0",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
     }
   ]
 }

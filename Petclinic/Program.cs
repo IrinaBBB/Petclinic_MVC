@@ -7,6 +7,7 @@ using Petclinic.DataAccess;
 using PetClinic.DataAccess.Seeding;
 using System;
 using System.Threading.Tasks;
+using PetClinic.DataAccess;
 
 namespace Petclinic
 {
@@ -22,8 +23,10 @@ namespace Petclinic
             {
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                 var blogContext = services.GetRequiredService<BlogDbContext>();
+                var shopContext = services.GetRequiredService<ShopDbContext>();
                 await SeedRoles.SeedRolesAsync(roleManager, loggerFactory);
                 await SeedBlog.SeedAsync(blogContext, loggerFactory);
+                await SeedShop.SeedAsync(shopContext, loggerFactory);
             }
             catch (Exception ex)
             {

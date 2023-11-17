@@ -10,8 +10,8 @@ using PetClinic.DataAccess;
 namespace PetClinic.DataAccess.Migrations.ShopMigrations
 {
     [DbContext(typeof(ShopDbContext))]
-    [Migration("20220710102333_AddCategoryEntity")]
-    partial class AddCategoryEntity
+    [Migration("20231106124911_AddCategory")]
+    partial class AddCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace PetClinic.DataAccess.Migrations.ShopMigrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("PetClinic.Models.Shop.Category", b =>
+            modelBuilder.Entity("PetClinic.DataAccess.Entities.Shop.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,12 +31,16 @@ namespace PetClinic.DataAccess.Migrations.ShopMigrations
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("DisplayOrder")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 

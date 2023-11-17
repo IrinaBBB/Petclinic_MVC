@@ -16,13 +16,13 @@ namespace Petclinic.Repository.Repository
         {
             _db = db;
             _blogDb = blogDb;
-            //Category = new CategoryRepository(_db);
+            Category = new CategoryRepository(_db);
             //Product = new ProductRepository(_db);
             //Company = new CompanyRepository(_db);
             Blog = new BlogRepository(_blogDb, userManager, mapper);
         }
 
-        //public ICategoryRepository Category { get; private set; }
+        public ICategoryRepository Category { get; private set; }
         //public IProductRepository Product { get; private set; }
         //public ICompanyRepository Company { get; private set; }
         public IBlogRepository Blog { get; private set; }

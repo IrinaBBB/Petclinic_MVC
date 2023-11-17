@@ -27,7 +27,7 @@
 
     <!-- ToastR -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
+    
     <link rel="stylesheet" href="~/css/site.css"/>
 </head>
 
@@ -84,21 +84,19 @@
         </div>
     </li>
 
-    <!-- Nav Item - Utilities Collapse Menu -->
+    <!-- Nav Item - Shop Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
+            <i class="fas fa-fw fa-shopping-bag"></i>
+            <span>Shop</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <a asp-area="Shop" asp-controller="Category" asp-action="Index" class="collapse-item">Categories</a>
+                        <a asp-area="Shop" asp-controller="Product" asp-action="Index" class="collapse-item">Products</a>
+                        <a asp-area="Shop" asp-controller="Company" asp-action="Index" class="collapse-item">Companies</a>
             </div>
         </div>
     </li>
@@ -374,6 +372,7 @@
 <!-- End of Topbar -->
 <!-- Begin Page Content -->
 <div class="container-fluid">
+    <partial name="~/Views/Partials/_Notification.cshtml" />
     @RenderBody()
 
 </div>
@@ -385,7 +384,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2021</span>
+            <span>Copyright &copy; Petclinic @DateTime.Now.ToString("yyyy")</span>
         </div>
     </div>
 </footer>
