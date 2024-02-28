@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Petclinic.Entities;
 
 namespace Petclinic.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<ApplicationUser>
     {
-        public DataContext(DbContextOptions options) : base(options) { }
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
-        
-        
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) { }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder) { }
     }
 }

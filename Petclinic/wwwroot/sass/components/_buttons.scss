@@ -1,0 +1,19 @@
+/** Button Styled Like Link */
+button.nav-link.text-light {
+    background-color: $primary-light;
+    outline: none;
+    border: none;
+    color: $color-white;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    display: inline-block;
+    margin-bottom: 6px;
+    border-bottom: 1px solid transparent;
+    transition: all .4s ease;
+    margin-left: 5px;
+
+    &:hover {
+        border-bottom: 1px solid $color-white;
+    }
+}

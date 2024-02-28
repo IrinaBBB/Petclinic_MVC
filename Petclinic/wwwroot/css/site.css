@@ -13,9 +13,9 @@
 .show > .btn-light.dropdown-toggle {
   color: #fff; }
 
-/*html {
-    scroll-behavior: smooth;
-}*/
+html {
+  scroll-behavior: smooth; }
+
 .heading-main {
   display: inline-block;
   font-size: 2.5rem;
@@ -44,6 +44,23 @@
     letter-spacing: 5px; }
   .h__light {
     color: #fff; }
+
+/** Button Styled Like Link */
+button.nav-link.text-light {
+  background-color: #548CF6;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  display: inline-block;
+  margin-bottom: 6px;
+  border-bottom: 1px solid transparent;
+  transition: all .4s ease;
+  margin-left: 5px; }
+  button.nav-link.text-light:hover {
+    border-bottom: 1px solid #fff; }
 
 .card::after {
   content: '';
