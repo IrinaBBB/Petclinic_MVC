@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Petclinic.Data;
 using Microsoft.AspNetCore.Identity;
 using Petclinic.Entities;
+using Petclinic.Data.DbInitializer;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,7 @@ builder.Services.AddDbContext<DataContext>(opt =>
 });
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<DataContext>();
 
 var app = builder.Build();
@@ -44,4 +47,16 @@ app.UseEndpoints(endpoints =>
 });
 app.MapRazorPages();
 
+var scope = app.Services.CreateScope();
+var context = scope.ServiceProvider.GetRequiredService<DataContext>();
+var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+try
+{
+    context.Database.Migrate();
+    await DbInitializer.Initialize(context, userManager);
+} catch (Exception ex)
+{
+    logger.LogError(ex, "A problem occurred during migration");
+}
 app.Run();

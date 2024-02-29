@@ -1,23 +1,30 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Petclinic.Models;
 using System.Diagnostics;
 using Petclinic.Entities;
+using Petclinic.Data;
+using Petclinic.ViewModels;
 
 namespace Petclinic.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly DataContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, DataContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var homePageViewModel = new HomePageViewModel
+            {
+                Vets = _context.Vets.ToList()
+            };
+            return View(homePageViewModel);
         }
 
         [HttpPost]

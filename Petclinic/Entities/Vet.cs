@@ -5,6 +5,7 @@ namespace Petclinic.Entities
 {
     public class Vet : Person
     {
-        public List<Specialty> Specialties { get; set; }
+        //public List<Specialty> Specialties { get; set; }
+        public string About { get; set; }
     }
 }

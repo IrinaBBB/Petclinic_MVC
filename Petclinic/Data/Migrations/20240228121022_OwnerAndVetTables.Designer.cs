@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Petclinic.Data;
 
@@ -10,9 +11,11 @@ using Petclinic.Data;
 namespace Petclinic.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240228121022_OwnerAndVetTables")]
+    partial class OwnerAndVetTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
@@ -41,26 +44,6 @@ namespace Petclinic.Data.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "5433c15e-a596-4c8b-b94e-e558541d4c07",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "afa8c7e7-9117-4cc1-acf3-ecd1e504f024",
-                            Name = "Vet",
-                            NormalizedName = "VET"
-                        },
-                        new
-                        {
-                            Id = "58162c8d-40bb-4665-9464-33be0f43c078",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -256,9 +239,6 @@ namespace Petclinic.Data.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(128)
@@ -283,9 +263,6 @@ namespace Petclinic.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("About")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Address")
                         .HasMaxLength(128)
                         .HasColumnType("TEXT");
@@ -301,9 +278,6 @@ namespace Petclinic.Data.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(128)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ImageUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")

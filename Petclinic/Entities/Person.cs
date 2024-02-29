@@ -24,5 +24,11 @@ namespace Petclinic.Entities
         [Required]
         [MaxLength(128)]
         public string Telephone { get; set; }
+
+        public string ImageUrl { get; set; }
+
+        [Required]
+        public string ApplicationUserId { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
     }
 }

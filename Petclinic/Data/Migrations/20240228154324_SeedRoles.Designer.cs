@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Petclinic.Data;
 
@@ -10,9 +11,11 @@ using Petclinic.Data;
 namespace Petclinic.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240228154324_SeedRoles")]
+    partial class SeedRoles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
@@ -45,19 +48,19 @@ namespace Petclinic.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5433c15e-a596-4c8b-b94e-e558541d4c07",
+                            Id = "accfcbce-2025-48d7-80a7-8682a5e0048e",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "afa8c7e7-9117-4cc1-acf3-ecd1e504f024",
+                            Id = "2c664764-b0c1-412c-af7a-607822f7693f",
                             Name = "Vet",
                             NormalizedName = "VET"
                         },
                         new
                         {
-                            Id = "58162c8d-40bb-4665-9464-33be0f43c078",
+                            Id = "9e898964-0994-4323-96cb-051456a35f34",
                             Name = "User",
                             NormalizedName = "USER"
                         });
