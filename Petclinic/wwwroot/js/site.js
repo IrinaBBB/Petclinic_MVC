@@ -1,6 +1,5 @@
 ﻿function showLogOutAlert() {
     var token = $('input[name="__RequestVerificationToken"]').val();
-    console.log(token);
     Swal.fire({
         title: 'Are you sure you want to log out?',
         icon: 'question',

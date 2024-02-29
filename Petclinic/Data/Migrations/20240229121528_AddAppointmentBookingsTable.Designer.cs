@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Petclinic.Data;
 
@@ -10,9 +11,11 @@ using Petclinic.Data;
 namespace Petclinic.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240229121528_AddAppointmentBookingsTable")]
+    partial class AddAppointmentBookingsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
@@ -45,19 +48,19 @@ namespace Petclinic.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5219a824-a7d8-42fa-a0e2-6bd1e5a7373a",
+                            Id = "1d9efc08-6b11-4004-92f1-610ff2f632b2",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "f40bab7e-aad6-4329-a8bb-fcf76d0a6c75",
+                            Id = "e2c6b46f-09b3-4195-8d82-bf3849eb463e",
                             Name = "Vet",
                             NormalizedName = "VET"
                         },
                         new
                         {
-                            Id = "e126a331-b70f-4cbc-a92f-a6ba0a8d2cab",
+                            Id = "35609fa0-57be-4ed2-8636-3434b5ec279c",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -240,22 +243,15 @@ namespace Petclinic.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Pending")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Processed")

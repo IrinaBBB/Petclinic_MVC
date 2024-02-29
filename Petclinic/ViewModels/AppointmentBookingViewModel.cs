@@ -1,12 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Petclinic.Entities
+namespace Petclinic.ViewModels
 {
-    public class AppointmentOrder
+    public class AppointmentBookingViewModel
     {
-        public int Id { get; set; }
-
         [Required]
         public string Name { get; set; }
 
@@ -18,7 +15,5 @@ namespace Petclinic.Entities
 
         [Required]
         public string Description { get; set; }
-        public bool Processed { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

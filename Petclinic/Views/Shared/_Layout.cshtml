@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Petclinic</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <link rel="stylesheet" href="~/lib/Swiper/swiper-bundle.css"/>
     <link rel="stylesheet" href="~/css/site.css"/>
 </head>
@@ -13,6 +14,7 @@
     <partial name="~/Views/Partials/_Nav.cshtml"/>
 </header>
 <main role="main">
+    <partial name="~/Views/Partials/_Notification.cshtml" />
     @RenderBody()
 </main>
 

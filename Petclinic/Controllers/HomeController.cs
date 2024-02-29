@@ -4,6 +4,7 @@ using System.Diagnostics;
 using Petclinic.Entities;
 using Petclinic.Data;
 using Petclinic.ViewModels;
+using Petclinic.Extensions;
 
 namespace Petclinic.Controllers
 {
@@ -27,22 +28,26 @@ namespace Petclinic.Controllers
             return View(homePageViewModel);
         }
 
+ 
+
         [HttpPost]
-        public IActionResult Index(AppointmentOrder model)
+        public IActionResult Book(HomePageViewModel model)
         {
+            var appointment = new AppointmentBooking 
+            { 
+                Name = model.AppointmentBookingViewModel.Name,
+                Email = model.AppointmentBookingViewModel.Email,
+                PhoneNumber = model.AppointmentBookingViewModel.PhoneNumber,
+                Description = model.AppointmentBookingViewModel.Description,
+            };
 
+            _context.AppointmentBookings.Add(appointment);
+            _context.SaveChanges();
+         
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return Redirect(Url.Action("Index", "Home") + "#location");
-        }
-
-        public IActionResult Blog()
-        {
-            return View();
-        }
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

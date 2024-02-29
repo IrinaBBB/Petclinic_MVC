@@ -11,6 +11,7 @@ namespace Petclinic.Data
 
         public DbSet<Vet> Vets { get; set; }
         public DbSet<Owner> Owners { get; set; }
+        public DbSet<AppointmentBooking> AppointmentBookings { get; set; }
 
 
 
