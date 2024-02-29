@@ -3,19 +3,22 @@
 @{
     ViewData["Title"] = "Log out";
 }
-
-<header>
-    <h1>@ViewData["Title"]</h1>
+<div class="account__card text-center">
+    <img class="footer__logo" src="~/img/vet.svg"  alt="Vet logo" />
+    <h3 class="heading-main d-block heading-small">@ViewData["Title"]</h3>
+    <header class="d-flex justify-content-center">
     @{
         if (User.Identity?.IsAuthenticated ?? false)
         {
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+                @Html.AntiForgeryToken()
+                <button type="submit" class="nav-link btn btn-link text-dark text-uppercase border-bottom">Click here to Logout</button>
             </form>
         }
         else
         {
-            <p>You have successfully logged out of the application.</p>
+            <p class="text-center h6">You have successfully logged out of the application</p>
         }
     }
 </header>
+</div>
