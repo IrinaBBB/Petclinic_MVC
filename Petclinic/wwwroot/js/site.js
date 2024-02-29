@@ -10,10 +10,9 @@
         confirmButtonText: 'Yes, I want to log out!'
     }).then((result) => {
         if (result.isConfirmed) {
-            $('form#logoutForm').submit();
             $.ajax({
                 url: '/Identity/Account/Logout',
-                type: 'POST',
+                type: 'GET',
                 success: function (data) {
                    window.location.href = '/Identity/Account/Logout';
                 },
