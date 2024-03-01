@@ -292,6 +292,46 @@ button.nav-link.text-light {
     padding: 40px 60px;
     height: 645px; }
 
+.price-list {
+  width: 80%;
+  margin: auto; }
+  .price-list h1 {
+    text-align: center;
+    margin-top: 1.6rem;
+    padding: 1.2rem 0;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #325DE9;
+    border-bottom: 2px solid #6c757d; }
+  .price-list__body {
+    display: flex; }
+  .price-list__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #6c757d; }
+    .price-list__section h2 {
+      text-transform: uppercase;
+      color: white;
+      text-transform: uppercase;
+      font-weight: lighter;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      background-image: linear-gradient(258.56deg, #548CF6 31.66%, #325DE9 80.67%) !important;
+      padding: 7px 30px;
+      flex-grow: 1; }
+  .price-list__section:first-child {
+    border-right: 2px solid #6c757d; }
+  .price-list__subsection p.price {
+    text-align: right; }
+  .price-list__subsection:first-child {
+    border-right: 1px solid #6c757d; }
+
+@media screen and (max-width: 992px) {
+  .price-list__section:first-child {
+    border-right: 0px solid transparent; } }
 .service-image {
   display: block;
   width: 75px;

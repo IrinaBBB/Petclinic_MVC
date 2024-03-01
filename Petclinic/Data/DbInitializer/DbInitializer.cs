@@ -8,6 +8,7 @@ namespace Petclinic.Data.DbInitializer
         public static async Task Initialize(DataContext context, UserManager<ApplicationUser> userManager)
         {
             await VetInitializer.InitializeVets(context, userManager);
+            await ServicesInitializer.InitializeServices(context, userManager);
         }
     }
 }

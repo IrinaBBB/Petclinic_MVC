@@ -13,28 +13,8 @@
                         <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <div class="dropdown">
-                            <a class="nav-link text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                                <span style="margin-right:2px;">Services</span>
-                                <img src="~/img/icons/down-arrow.svg" alt="arrow down" style="width:12px;margin-top:-3px;"/>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="d-block text-dark py-1 ml-3" asp-area="" asp-controller="Home" asp-action="Cats">Cats</a>
-                                <a class="d-block text-dark py-1 ml-3" asp-area="" asp-controller="Home" asp-action="Blog1">Dogs</a>
-                                <a class="d-block text-dark py-1 ml-3" asp-area="" asp-controller="Home" asp-action="Blog1">Rodents</a>
-                                <a class="d-block text-dark py-1 ml-3" asp-area="" asp-controller="Home" asp-action="Blog1">Exotic Animals</a>
-                            </div>
-                        </div>
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Services">Our Services</a>
                     </li>
-                   @*  <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Shop">Shop</a>
-                    </li> *@
-                   @*  <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                    </li> *@
                 <partial name="~/Views/Partials/_LoginPartial.cshtml" />
                 </ul>
             </div>

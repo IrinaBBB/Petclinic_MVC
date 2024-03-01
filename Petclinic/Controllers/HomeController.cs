@@ -28,7 +28,13 @@ namespace Petclinic.Controllers
             return View(homePageViewModel);
         }
 
- 
+        public IActionResult Services()
+        {
+            var services = _context.Services.ToList();
+            return View(services);
+        }
+
+
 
         [HttpPost]
         public IActionResult Book(HomePageViewModel model)
@@ -46,8 +52,6 @@ namespace Petclinic.Controllers
          
             return View();
         }
-
-       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

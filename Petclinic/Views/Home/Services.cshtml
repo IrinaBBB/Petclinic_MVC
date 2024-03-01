@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Our Services";
+}
+@model List<Service>
+@{
+    var cats = Model.Where(s => s.Type == "cats").ToList();
+    var dogs = Model.Where(s => s.Type == "dogs").ToList();
+    var rodents = Model.Where(s => s.Type == "rodents").ToList();
+    var exotics = Model.Where(s => s.Type == "exotic animals").ToList();
+    var birds = Model.Where(s => s.Type == "birds").ToList();
+}
+
+
+<div class="container price-list mb-5">
+    <h1 class="my-0 py-4">Price List</h1>
+    <div class="row">
+        <div class="col-12 d-block col-lg-6 price-list__section pt-5 px-5">
+            <div class="d-flex flex-column align-items-center w-100">
+                <h2 class="my-4 my-lg-3 w-100 text-center">Cats</h2>
+                <table class="table table-striped">
+                    <tbody>
+                        @foreach(var cat in cats) {
+                            <tr class="border-none">
+                                <th scope="row"></th>
+                                <td colspan="2" class="text-uppercase">@cat.Name</td>
+                                <td class="text-center">@cat.Price$</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="d-flex flex-column align-items-center w-100">
+                <h2 class="my-4 my-lg-3 w-100 text-center">Dogs</h2>
+                <table class="table table-striped">
+                    <tbody>
+                    @foreach (var dog in dogs)
+                    {
+                        <tr>
+                            <th scope="row"></th>
+                            <td colspan="2" class="text-uppercase">@dog.Name</td>
+                            <td class="text-center">@dog.Price$</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-12 d-block col-lg-6 price-list__section pt-5 px-5">
+            <div class="d-flex flex-column align-items-center w-100">
+                <h2 class="my-4 my-lg-3 w-100 text-center">Birds</h2>
+                <table class="table table-striped">
+                    <tbody>
+                        @foreach (var bird in birds)
+                        {
+                            <tr>
+                                <th scope="row"></th>
+                                <td colspan="2" class="text-uppercase">@bird.Name</td>
+                                <td class="text-center">@bird.Price$</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex flex-column align-items-center w-100">
+                <h2 class="my-4 my-lg-3 w-100 text-center">Rodents</h2>
+                <table class="table table-striped">
+                    <tbody>
+                        @foreach (var rodent in rodents)
+                        {
+                            <tr>
+                                <th scope="row"></th>
+                                <td colspan="2" class="text-uppercase">@rodent.Name</td>
+                                <td class="text-center">@rodent.Price$</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex flex-column align-items-center w-100">
+                <h2 class="my-4 my-lg-3 w-100 text-center">Exotic Animals</h2>
+                <table class="table table-striped">
+                    <tbody>
+                        @foreach (var exotic in exotics)
+                        {
+                            <tr>
+                                <th scope="row"></th>
+                                <td colspan="2" class="text-uppercase">@exotic.Name</td>
+                                <td class="text-center">@exotic.Price$</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
