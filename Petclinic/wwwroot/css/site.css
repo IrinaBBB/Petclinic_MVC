@@ -294,7 +294,8 @@ button.nav-link.text-light {
 
 .price-list {
   width: 80%;
-  margin: auto; }
+  margin: auto;
+  background-color: aliceblue; }
   .price-list h1 {
     text-align: center;
     margin-top: 1.6rem;
