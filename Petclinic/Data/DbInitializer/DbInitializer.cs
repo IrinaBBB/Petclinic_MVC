@@ -9,6 +9,7 @@ namespace Petclinic.Data.DbInitializer
         {
             await VetInitializer.InitializeVets(context, userManager);
             await ServicesInitializer.InitializeServices(context, userManager);
+            await OwnerWithPetsInitializer.InitializeOwnersWithPets(context, userManager);
         }
     }
 }

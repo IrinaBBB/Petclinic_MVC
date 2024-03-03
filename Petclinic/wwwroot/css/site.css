@@ -45,6 +45,16 @@
   .h__light {
     color: #fff; }
 
+.bg-textured {
+  background-color: #ffffff;
+  opacity: 0.8;
+  background-image: radial-gradient(ellipse farthest-corner at 10px 10px, #dddddd, #efefef 50%, #efefef 50%);
+  background-size: 10px 10px; }
+
+.bg-light-grey {
+  background-color: #efefef;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+
 /** Button Styled Like Link */
 button.nav-link.text-light {
   background-color: #548CF6;
@@ -76,6 +86,17 @@ button.nav-link.text-light {
 .card-img-top {
   height: 250px;
   object-fit: cover; }
+
+.standard-card {
+  border-radius: 10px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+
+.visit-list {
+  height: 500px; }
+  .visit-list .standard-card {
+    overflow-y: scroll; }
+  .visit-list__item:not(:first-child) {
+    border-top: 1px solid #6c757d; }
 
 .carousel-item {
   height: 38rem; }
@@ -295,7 +316,9 @@ button.nav-link.text-light {
 .price-list {
   width: 80%;
   margin: auto;
-  background-color: aliceblue; }
+  background-color: #efefef;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  border-radius: 15px; }
   .price-list h1 {
     text-align: center;
     margin-top: 1.6rem;

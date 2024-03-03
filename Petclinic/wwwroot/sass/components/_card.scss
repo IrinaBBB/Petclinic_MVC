@@ -19,3 +19,23 @@
         object-fit: cover;
     }
 }
+
+.standard-card {
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+}
+
+.visit-list {
+    height: 500px;
+
+    & .standard-card {
+        overflow-y: scroll;
+    }
+
+    &__item {
+
+        &:not(:first-child) {
+            border-top: 1px solid $grey;
+        }
+    }
+}

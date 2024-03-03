@@ -1,0 +1,11 @@
+.bg-textured {
+    background-color: #ffffff;
+    opacity: 0.8;
+    background-image: radial-gradient( ellipse farthest-corner at 10px 10px, #dddddd, #efefef 50%, #efefef 50%);
+    background-size: 10px 10px;
+}
+
+.bg-light-grey {
+    background-color: #efefef;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

@@ -26,6 +26,12 @@ namespace Petclinic.Data
                     new IdentityRole { Name = "Vet", NormalizedName = "VET" },
                     new IdentityRole { Name = "User", NormalizedName = "USER" }
             );
+
+            modelBuilder.Entity<Pet>()
+               .HasOne(p => p.Owner)
+               .WithMany(o => o.Pets)
+               .HasForeignKey(p => p.OwnerId)  
+               .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -1,7 +1,10 @@
 .price-list {
     width: 80%;
     margin: auto;
-    background-color: aliceblue;
+    background-color: $grey-light;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+    border-radius: 15px;
+
     h1 {
         text-align: center;
         margin-top: 1.6rem;
